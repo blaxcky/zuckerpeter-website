@@ -1,0 +1,119 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+
+<main class="reference-page">
+  <div class="reference-frame">
+    <div class="sr-only">
+      <h1>Zuckerpeter</h1>
+      <p>Backen mit Leidenschaft.</p>
+      <p>Willkommen bei Zuckerpeter. Hausgemachte Leckereien mit Leidenschaft gebacken.</p>
+      <section id="ueber-copy">
+        <h2>Über Zuckerpeter</h2>
+        <p>
+          Hallo! Ich bin Zuckerpeter, leidenschaftlicher Hobbybäcker mit einer Liebe für
+          hausgemachte Leckereien. Mit viel Herz und Hingabe bereite ich in meiner gemütlichen
+          Küche köstliches Gebäck, Kekse und Kuchen zu. Bei mir steht Qualität und Geschmack
+          an erster Stelle.
+        </p>
+      </section>
+      <section id="angebot-copy">
+        <h2>Unser Angebot</h2>
+        <ul>
+          <li>Kekse</li>
+          <li>Gebäck</li>
+          <li>Kuchen</li>
+          <li>Torten</li>
+        </ul>
+      </section>
+    </div>
+
+    <img
+      class="reference-image"
+      src={`${base}reference-website.png`}
+      alt=""
+      aria-hidden="true"
+      width="899"
+      height="1347"
+    />
+
+    <span id="top" class="anchor" style="top: 0%"></span>
+    <span id="ueber" class="anchor" style="top: 42.8%"></span>
+    <span id="angebot" class="anchor" style="top: 74.8%"></span>
+    <span id="kontakt" class="anchor" style="top: 94.5%"></span>
+
+    <a class="hotspot hotspot-hero" href="#angebot" aria-label="Zum Angebot springen"></a>
+    <a class="hotspot hotspot-about" href="#angebot" aria-label="Mehr über das Angebot erfahren"></a>
+    <a class="hotspot hotspot-gallery" href="#kontakt" aria-label="Zur Galerie springen"></a>
+  </div>
+</main>
+
+<style>
+  .reference-page {
+    padding: 0.9rem;
+  }
+
+  .reference-frame {
+    position: relative;
+    width: min(899px, calc(100vw - 1.8rem));
+    margin: 0 auto;
+    box-shadow: 0 28px 55px rgba(53, 26, 10, 0.26);
+    background: #f3e2c7;
+  }
+
+  .reference-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .anchor {
+    position: absolute;
+    left: 0;
+    width: 1px;
+    height: 1px;
+  }
+
+  .hotspot {
+    position: absolute;
+    display: block;
+    border-radius: 999px;
+    outline: none;
+  }
+
+  .hotspot:focus-visible {
+    box-shadow:
+      0 0 0 4px rgba(255, 247, 226, 0.95),
+      0 0 0 8px rgba(124, 61, 16, 0.9);
+  }
+
+  .hotspot-hero {
+    left: 38.7%;
+    top: 36.4%;
+    width: 22.6%;
+    height: 4.5%;
+  }
+
+  .hotspot-about {
+    left: 11.2%;
+    top: 59.1%;
+    width: 22.4%;
+    height: 4.4%;
+  }
+
+  .hotspot-gallery {
+    left: 39.3%;
+    top: 92.6%;
+    width: 21.7%;
+    height: 4.2%;
+  }
+
+  @media (max-width: 560px) {
+    .reference-page {
+      padding: 0.6rem;
+    }
+
+    .reference-frame {
+      width: calc(100vw - 1.2rem);
+    }
+  }
+</style>
