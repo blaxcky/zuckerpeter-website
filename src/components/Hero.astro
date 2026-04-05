@@ -3,32 +3,63 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <header class="hero">
+  <div class="hero-bg"></div>
   <div class="hero-inner">
-    <img src={`${base}logo.png`} alt="Zuckerpeter Logo" class="hero-logo" width="280" height="280" />
+    <div class="hero-logo-wrap">
+      <img src={`${base}logo.png`} alt="Zuckerpeter Logo" class="hero-logo" width="320" height="320" />
+    </div>
     <h1>Willkommen bei Zuckerpeter!</h1>
     <p class="hero-subtitle">Hausgemachte Leckereien mit Leidenschaft gebacken.</p>
-    <a href="#angebot" class="btn">Jetzt bestellen!</a>
+    <div class="hero-cta">
+      <a href="#angebot" class="btn-ornate">Jetzt bestellen!</a>
+    </div>
   </div>
+  <div class="hero-fade"></div>
 </header>
 
 <style>
   .hero {
+    position: relative;
     text-align: center;
-    padding: 4rem 1.5rem 3rem;
+    padding: 3rem 1.5rem 4rem;
+    overflow: hidden;
+  }
+
+  /* Warm radial glow behind the logo area */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
     background:
-      radial-gradient(ellipse at top, rgba(200, 168, 78, 0.12) 0%, transparent 70%),
-      var(--color-bg);
+      radial-gradient(ellipse 70% 60% at 50% 30%, rgba(200, 168, 78, 0.15) 0%, transparent 70%),
+      radial-gradient(ellipse 100% 80% at 50% 0%, rgba(245, 230, 211, 0.6) 0%, transparent 80%);
+    pointer-events: none;
   }
 
   .hero-inner {
+    position: relative;
     max-width: 700px;
     margin: 0 auto;
   }
 
-  .hero-logo {
-    margin: 0 auto 1.5rem;
+  .hero-logo-wrap {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Soft golden glow behind the logo */
+  .hero-logo-wrap::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
     border-radius: 50%;
-    filter: drop-shadow(0 4px 20px rgba(139, 105, 20, 0.3));
+    background: radial-gradient(circle, rgba(200, 168, 78, 0.2) 0%, transparent 70%);
+    z-index: -1;
+  }
+
+  .hero-logo {
+    border-radius: 50%;
+    filter: drop-shadow(0 6px 30px rgba(92, 61, 46, 0.35));
   }
 
   h1 {
@@ -37,33 +68,28 @@ const base = import.meta.env.BASE_URL;
     font-weight: 900;
     color: var(--color-brown-dark);
     margin-bottom: 0.5rem;
+    text-shadow: 0 1px 2px rgba(200, 168, 78, 0.15);
   }
 
   .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     color: var(--color-text-light);
     margin-bottom: 2rem;
+    font-style: italic;
   }
 
-  .btn {
-    display: inline-block;
-    padding: 0.85rem 2.5rem;
-    background: linear-gradient(135deg, var(--color-brown) 0%, var(--color-brown-dark) 100%);
-    color: var(--color-gold);
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    font-weight: 700;
-    border: 2px solid var(--color-gold);
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
+  .hero-cta {
+    padding: 0 1rem;
   }
 
-  .btn:hover {
-    background: linear-gradient(135deg, var(--color-accent-dark) 0%, var(--color-brown) 100%);
-    color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(139, 105, 20, 0.4);
+  /* Soft gradient fade into next section */
+  .hero-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, var(--color-bg-alt));
+    pointer-events: none;
   }
 </style>

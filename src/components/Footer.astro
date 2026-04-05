@@ -2,9 +2,11 @@
 ---
 
 <footer class="footer" id="kontakt">
+  <div class="footer-fade"></div>
   <div class="footer-inner">
+    <div class="flourish"></div>
     <p class="footer-brand">Zuckerpeter</p>
-    <p class="footer-tagline">Backen mit Leidenschaft</p>
+    <p class="footer-tagline">— Backen mit Leidenschaft —</p>
     <div class="footer-divider"></div>
     <p class="footer-copy">&copy; {new Date().getFullYear()} Zuckerpeter. Alle Rechte vorbehalten.</p>
   </div>
@@ -12,41 +14,58 @@
 
 <style>
   .footer {
-    padding: 3rem 1.5rem 2rem;
-    background: var(--color-brown-dark);
+    position: relative;
+    padding: 3.5rem 1.5rem 2rem;
+    background:
+      linear-gradient(180deg, var(--color-brown-dark) 0%, #2a1a10 100%);
     color: var(--color-bg-alt);
     text-align: center;
+  }
+
+  .footer-fade {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--color-brown-dark));
+    pointer-events: none;
   }
 
   .footer-inner {
     max-width: 600px;
     margin: 0 auto;
+    position: relative;
   }
 
   .footer-brand {
     font-family: var(--font-heading);
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--color-gold);
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.15rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
   }
 
   .footer-tagline {
+    font-family: var(--font-heading);
     font-size: 1rem;
-    color: var(--color-bg-alt);
-    opacity: 0.8;
+    color: var(--color-gold-light);
+    opacity: 0.7;
+    font-style: italic;
   }
 
   .footer-divider {
-    width: 60px;
-    height: 2px;
-    background: var(--color-gold);
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
     margin: 1.5rem auto;
-    opacity: 0.5;
+    opacity: 0.4;
   }
 
   .footer-copy {
     font-size: 0.85rem;
-    opacity: 0.6;
+    opacity: 0.45;
+    color: var(--color-bg-alt);
   }
 </style>

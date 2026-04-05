@@ -1,43 +1,160 @@
 ---
-const categories = [
-  { name: 'Kekse', emoji: '🍪', color: '#d4a574' },
-  { name: 'Gebäck', emoji: '🥐', color: '#c89b6b' },
-  { name: 'Kuchen', emoji: '🍰', color: '#b8860b' },
-  { name: 'Torten', emoji: '🎂', color: '#a0522d' },
-];
 ---
 
 <section class="angebot" id="angebot">
+  <div class="angebot-top-fade"></div>
   <div class="angebot-inner">
     <h2>Unser Angebot</h2>
+    <div class="heading-underline"></div>
     <p class="angebot-subtitle">Entdecke meine Auswahl an köstlichen, hausgemachten Leckereien.</p>
     <div class="angebot-grid">
-      {categories.map((cat) => (
-        <div class="angebot-card">
-          <div class="angebot-img" style={`background: linear-gradient(135deg, ${cat.color}, ${cat.color}dd);`}>
-            <span class="angebot-emoji">{cat.emoji}</span>
-          </div>
-          <div class="angebot-label">
-            <span>{cat.name}</span>
-          </div>
+
+      {/* Kekse */}
+      <div class="angebot-card">
+        <div class="angebot-img kekse-bg">
+          <svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg" class="card-svg" aria-hidden="true">
+            {/* Plate */}
+            <ellipse cx="100" cy="120" rx="80" ry="25" fill="#f5e6d3" stroke="#c8a84e" stroke-width="1"/>
+            {/* Linzer cookies */}
+            <circle cx="70" cy="95" r="22" fill="#d4a574" stroke="#b08050" stroke-width="1.5"/>
+            <circle cx="70" cy="95" r="10" fill="#c0392b" opacity="0.7"/>
+            <circle cx="70" cy="95" r="6" fill="#e74c3c" opacity="0.5"/>
+            <circle cx="105" cy="90" r="20" fill="#d4a574" stroke="#b08050" stroke-width="1.5"/>
+            <circle cx="105" cy="90" r="9" fill="#c0392b" opacity="0.7"/>
+            <circle cx="105" cy="90" r="5" fill="#e74c3c" opacity="0.5"/>
+            <circle cx="135" cy="98" r="18" fill="#d4a574" stroke="#b08050" stroke-width="1.5"/>
+            <circle cx="135" cy="98" r="8" fill="#c0392b" opacity="0.7"/>
+            <circle cx="135" cy="98" r="4" fill="#e74c3c" opacity="0.5"/>
+            {/* Powdered sugar dusting */}
+            <circle cx="60" cy="85" r="1.5" fill="white" opacity="0.6"/>
+            <circle cx="80" cy="82" r="1" fill="white" opacity="0.5"/>
+            <circle cx="115" cy="80" r="1.2" fill="white" opacity="0.5"/>
+            <circle cx="95" cy="105" r="1" fill="white" opacity="0.4"/>
+            <circle cx="140" cy="88" r="1.2" fill="white" opacity="0.5"/>
+          </svg>
         </div>
-      ))}
+        <div class="angebot-label">
+          <span class="label-wing left"></span>
+          <span class="label-text">Kekse</span>
+          <span class="label-wing right"></span>
+        </div>
+      </div>
+
+      {/* Gebäck */}
+      <div class="angebot-card">
+        <div class="angebot-img gebaeck-bg">
+          <svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg" class="card-svg" aria-hidden="true">
+            {/* Plate */}
+            <ellipse cx="100" cy="125" rx="75" ry="22" fill="#f5e6d3" stroke="#c8a84e" stroke-width="1"/>
+            {/* Croissant */}
+            <path d="M55 85 Q70 60 100 70 Q130 60 145 85 Q130 100 100 95 Q70 100 55 85Z" fill="#d4a574" stroke="#b08050" stroke-width="1.5"/>
+            <path d="M70 80 Q85 68 100 75 Q115 68 130 80" stroke="#b08050" stroke-width="1" fill="none" opacity="0.4"/>
+            <path d="M75 87 Q90 78 100 82 Q110 78 125 87" stroke="#b08050" stroke-width="1" fill="none" opacity="0.3"/>
+            {/* Pretzel */}
+            <path d="M80 108 Q65 95 75 85 Q90 78 100 90 Q110 78 125 85 Q135 95 120 108 Q100 120 80 108Z" fill="#c89b6b" stroke="#a07040" stroke-width="1.5"/>
+            <circle cx="83" cy="100" r="2" fill="#f5e6d3" opacity="0.6"/>
+            <circle cx="117" cy="100" r="2" fill="#f5e6d3" opacity="0.6"/>
+            <circle cx="100" cy="96" r="1.5" fill="#f5e6d3" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="angebot-label">
+          <span class="label-wing left"></span>
+          <span class="label-text">Gebäck</span>
+          <span class="label-wing right"></span>
+        </div>
+      </div>
+
+      {/* Kuchen */}
+      <div class="angebot-card">
+        <div class="angebot-img kuchen-bg">
+          <svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg" class="card-svg" aria-hidden="true">
+            {/* Plate */}
+            <ellipse cx="100" cy="130" rx="78" ry="20" fill="#f5e6d3" stroke="#c8a84e" stroke-width="1"/>
+            {/* Tart base */}
+            <path d="M40 110 Q40 85 100 85 Q160 85 160 110 L155 120 Q100 125 45 120Z" fill="#d4a574" stroke="#b08050" stroke-width="1.5"/>
+            {/* Crimped edge */}
+            <path d="M42 110 Q50 107 55 110 Q60 107 65 110 Q70 107 75 110 Q80 107 85 110 Q90 107 95 110 Q100 107 105 110 Q110 107 115 110 Q120 107 125 110 Q130 107 135 110 Q140 107 145 110 Q150 107 155 110 Q158 107 160 110" stroke="#b08050" stroke-width="1" fill="none" opacity="0.5"/>
+            {/* Fruit filling */}
+            <circle cx="70" cy="98" r="8" fill="#e74c3c" opacity="0.7"/>
+            <circle cx="90" cy="95" r="7" fill="#3498db" opacity="0.6"/>
+            <circle cx="110" cy="97" r="8" fill="#e74c3c" opacity="0.7"/>
+            <circle cx="130" cy="95" r="7" fill="#3498db" opacity="0.6"/>
+            <circle cx="80" cy="103" r="6" fill="#27ae60" opacity="0.5"/>
+            <circle cx="100" cy="100" r="7" fill="#e74c3c" opacity="0.6"/>
+            <circle cx="120" cy="103" r="6" fill="#27ae60" opacity="0.5"/>
+            {/* Glaze shine */}
+            <ellipse cx="95" cy="94" rx="35" ry="5" fill="white" opacity="0.1"/>
+          </svg>
+        </div>
+        <div class="angebot-label">
+          <span class="label-wing left"></span>
+          <span class="label-text">Kuchen</span>
+          <span class="label-wing right"></span>
+        </div>
+      </div>
+
+      {/* Torten */}
+      <div class="angebot-card">
+        <div class="angebot-img torten-bg">
+          <svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg" class="card-svg" aria-hidden="true">
+            {/* Plate */}
+            <ellipse cx="100" cy="135" rx="78" ry="18" fill="#f5e6d3" stroke="#c8a84e" stroke-width="1"/>
+            {/* Bottom layer */}
+            <rect x="45" y="100" rx="4" width="110" height="30" fill="#d4a574" stroke="#b08050" stroke-width="1"/>
+            {/* Middle layer */}
+            <rect x="50" y="75" rx="4" width="100" height="28" fill="#a0522d" stroke="#7a3d20" stroke-width="1"/>
+            {/* Chocolate drip */}
+            <path d="M50 78 Q50 72 55 72 L145 72 Q150 72 150 78" fill="#5c3d2e"/>
+            <path d="M60 78 Q60 85 58 88" stroke="#5c3d2e" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M80 78 Q80 90 78 95" stroke="#5c3d2e" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+            <path d="M120 78 Q120 88 122 92" stroke="#5c3d2e" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M140 78 Q140 83 142 86" stroke="#5c3d2e" stroke-width="4" fill="none" stroke-linecap="round"/>
+            {/* Cream between layers */}
+            <rect x="50" y="98" width="100" height="5" fill="#faf3ea" opacity="0.8"/>
+            {/* Top decoration - berries */}
+            <circle cx="75" cy="68" r="6" fill="#c0392b"/>
+            <circle cx="90" cy="65" r="5" fill="#c0392b"/>
+            <circle cx="105" cy="66" r="6" fill="#c0392b"/>
+            <circle cx="120" cy="68" r="5" fill="#c0392b"/>
+            {/* Shine */}
+            <circle cx="73" cy="66" r="2" fill="white" opacity="0.3"/>
+            <circle cx="103" cy="64" r="2" fill="white" opacity="0.3"/>
+          </svg>
+        </div>
+        <div class="angebot-label">
+          <span class="label-wing left"></span>
+          <span class="label-text">Torten</span>
+          <span class="label-wing right"></span>
+        </div>
+      </div>
+
     </div>
     <div class="angebot-cta">
-      <a href="#kontakt" class="btn">Zur Galerie</a>
+      <a href="#kontakt" class="btn-ornate">Zur Galerie</a>
     </div>
   </div>
 </section>
 
 <style>
   .angebot {
-    padding: 4rem 1.5rem;
-    background: var(--color-bg-alt);
+    position: relative;
+    padding: 3.5rem 1.5rem 4rem;
+    background: var(--color-bg);
     text-align: center;
   }
 
+  .angebot-top-fade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: linear-gradient(to bottom, var(--color-bg), transparent);
+    pointer-events: none;
+  }
+
   .angebot-inner {
-    max-width: 900px;
+    max-width: 940px;
     margin: 0 auto;
   }
 
@@ -49,30 +166,41 @@ const categories = [
     margin-bottom: 0.5rem;
   }
 
+  .heading-underline {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+    margin: 0 auto 0.8rem;
+  }
+
   .angebot-subtitle {
     color: var(--color-text-light);
     font-size: 1.05rem;
     margin-bottom: 2.5rem;
+    font-style: italic;
   }
 
   .angebot-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     gap: 1.5rem;
     margin-bottom: 2.5rem;
   }
 
   .angebot-card {
     border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(92, 61, 46, 0.15);
+    overflow: visible;
+    position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
   }
 
   .angebot-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(92, 61, 46, 0.25);
+    transform: translateY(-5px);
+  }
+
+  .angebot-card:hover .angebot-img {
+    box-shadow: 0 10px 35px rgba(92, 61, 46, 0.3);
   }
 
   .angebot-img {
@@ -80,47 +208,101 @@ const categories = [
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    box-shadow:
+      0 4px 20px rgba(92, 61, 46, 0.2),
+      inset 0 0 40px rgba(92, 61, 46, 0.05);
+    transition: box-shadow 0.3s ease;
   }
 
-  .angebot-emoji {
-    font-size: 4rem;
-    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+  .kekse-bg {
+    background: linear-gradient(145deg, #f0dcc0 0%, #e2c9a5 50%, #d4b78a 100%);
+  }
+  .gebaeck-bg {
+    background: linear-gradient(145deg, #eedcbe 0%, #dcc8a0 50%, #ccb88a 100%);
+  }
+  .kuchen-bg {
+    background: linear-gradient(145deg, #f0dcc0 0%, #e0c8a0 50%, #d0b888 100%);
+  }
+  .torten-bg {
+    background: linear-gradient(145deg, #e8d0b0 0%, #d8bc94 50%, #c8a878 100%);
   }
 
+  /* Subtle inner texture overlay */
+  .angebot-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 80%, rgba(92,61,46,0.06) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .card-svg {
+    width: 85%;
+    height: 85%;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 2px 6px rgba(92, 61, 46, 0.15));
+  }
+
+  /* Banner-style label at bottom of card */
   .angebot-label {
-    padding: 0.75rem;
-    background: linear-gradient(135deg, var(--color-brown) 0%, var(--color-brown-dark) 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -12px auto 0;
+    z-index: 2;
+    width: 80%;
   }
 
-  .angebot-label span {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: var(--color-gold);
-  }
-
-  .btn {
+  .label-text {
     display: inline-block;
-    padding: 0.85rem 2.5rem;
-    background: linear-gradient(135deg, var(--color-brown) 0%, var(--color-brown-dark) 100%);
-    color: var(--color-gold);
+    padding: 0.5rem 1.5rem;
+    background: linear-gradient(180deg, #7a5a3a 0%, #5c3d2e 40%, #4a2e1e 100%);
+    color: var(--color-gold-light);
     font-family: var(--font-heading);
-    font-size: 1.1rem;
     font-weight: 700;
-    border: 2px solid var(--color-gold);
-    border-radius: 6px;
-    text-decoration: none;
-    transition: all 0.3s ease;
+    font-size: 1.05rem;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    box-shadow:
+      0 2px 6px rgba(0,0,0,0.25),
+      inset 0 1px 0 rgba(255,255,255,0.08);
+    position: relative;
+    z-index: 1;
   }
 
-  .btn:hover {
-    background: linear-gradient(135deg, var(--color-accent-dark) 0%, var(--color-brown) 100%);
-    color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(139, 105, 20, 0.4);
+  .label-wing {
+    display: block;
+    width: 16px;
+    height: 28px;
+    flex-shrink: 0;
+  }
+
+  .label-wing.left {
+    background: linear-gradient(180deg, #7a5a3a, #4a2e1e);
+    clip-path: polygon(0% 15%, 100% 0%, 100% 100%, 0% 85%);
+    margin-right: -1px;
+  }
+
+  .label-wing.right {
+    background: linear-gradient(180deg, #7a5a3a, #4a2e1e);
+    clip-path: polygon(0% 0%, 100% 15%, 100% 85%, 0% 100%);
+    margin-left: -1px;
   }
 
   .angebot-cta {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 500px) {
+    .angebot-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
   }
 </style>
