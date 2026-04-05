@@ -2,118 +2,510 @@
 const base = import.meta.env.BASE_URL;
 ---
 
-<main class="reference-page">
-  <div class="reference-frame">
-    <div class="sr-only">
-      <h1>Zuckerpeter</h1>
-      <p>Backen mit Leidenschaft.</p>
-      <p>Willkommen bei Zuckerpeter. Hausgemachte Leckereien mit Leidenschaft gebacken.</p>
-      <section id="ueber-copy">
-        <h2>Über Zuckerpeter</h2>
+<main class="landing" style={`--reference-image: url(${base}reference-website.png)`}>
+  <section class="hero">
+    <div class="page-shell">
+      <div class="hero-stage">
+        <div class="hero-backdrop"></div>
+        <div class="hero-glow"></div>
+        <img src={`${base}logo.png`} alt="Zuckerpeter Logo" class="hero-logo" width="420" height="420" />
+      </div>
+
+      <div class="hero-copy">
+        <h1 class="hero-title">Willkommen bei Zuckerpeter!</h1>
+        <p class="hero-subtitle">Hausgemachte Leckereien mit Leidenschaft gebacken.</p>
+        <a class="ornate-btn" href="#angebot">Jetzt bestellen!</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="ueber">
+    <div class="page-shell section-card about-shell">
+      <div class="about-copy">
+        <h2 class="section-title">Über Zuckerpeter</h2>
         <p>
           Hallo! Ich bin Zuckerpeter, leidenschaftlicher Hobbybäcker mit einer Liebe für
           hausgemachte Leckereien. Mit viel Herz und Hingabe bereite ich in meiner gemütlichen
           Küche köstliches Gebäck, Kekse und Kuchen zu. Bei mir steht Qualität und Geschmack
-          an erster Stelle.
+          an erster Stelle. Lass dich von meinen Kreationen begeistern und erfahre mehr über
+          mein Angebot!
         </p>
-      </section>
-      <section id="angebot-copy">
-        <h2>Unser Angebot</h2>
-        <ul>
-          <li>Kekse</li>
-          <li>Gebäck</li>
-          <li>Kuchen</li>
-          <li>Torten</li>
-        </ul>
-      </section>
+        <a class="ornate-btn" href="#angebot">Mehr erfahren</a>
+      </div>
+
+      <div class="about-art">
+        <div class="about-medallion">
+          <div class="about-crop" aria-hidden="true"></div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <img
-      class="reference-image"
-      src={`${base}reference-website.png`}
-      alt=""
-      aria-hidden="true"
-      width="899"
-      height="1347"
-    />
+  <section class="features">
+    <div class="page-shell section-card features-shell">
+      <article class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="15" y="30" rx="4" ry="4" width="40" height="28" fill="#f0d48a" stroke="#c8a84e" stroke-width="1.5"/>
+            <rect x="20" y="35" rx="2" ry="2" width="12" height="18" fill="#f5e0a0" opacity="0.6"/>
+            <path d="M58 36 Q65 30 68 38 Q71 46 65 44" fill="#f0d48a" stroke="#c8a84e" stroke-width="1"/>
+            <rect x="25" y="15" rx="5" ry="5" width="55" height="10" fill="#d4a574" stroke="#a07040" stroke-width="1" transform="rotate(-8 52 20)"/>
+            <rect x="20" y="16" rx="3" ry="3" width="10" height="8" fill="#b08050" transform="rotate(-8 25 20)"/>
+            <rect x="75" y="12" rx="3" ry="3" width="10" height="8" fill="#b08050" transform="rotate(-8 80 16)"/>
+          </svg>
+        </div>
+        <h3>Hausgemacht</h3>
+        <p>Mit Liebe von Hand gemacht.</p>
+      </article>
 
-    <span id="top" class="anchor" style="top: 0%"></span>
-    <span id="ueber" class="anchor" style="top: 42.8%"></span>
-    <span id="angebot" class="anchor" style="top: 74.8%"></span>
-    <span id="kontakt" class="anchor" style="top: 94.5%"></span>
+      <article class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M30 25 Q30 18 40 15 L60 15 Q70 18 70 25 L72 65 Q72 70 65 70 L35 70 Q28 70 28 65Z" fill="#f5e6d3" stroke="#b08050" stroke-width="1.5"/>
+            <path d="M35 25 Q50 20 65 25" stroke="#b08050" stroke-width="2" fill="none"/>
+            <ellipse cx="50" cy="22" rx="4" ry="3" fill="#b08050" opacity="0.5"/>
+            <line x1="76" y1="60" x2="82" y2="20" stroke="#c8a84e" stroke-width="1.5"/>
+            <ellipse cx="82" cy="22" rx="3" ry="6" fill="#ddc173" transform="rotate(-10 82 22)"/>
+            <ellipse cx="80" cy="30" rx="3" ry="5" fill="#ddc173" transform="rotate(10 80 30)"/>
+            <ellipse cx="83" cy="36" rx="3" ry="5" fill="#ddc173" transform="rotate(-10 83 36)"/>
+          </svg>
+        </div>
+        <h3>Hochwertige Zutaten</h3>
+        <p>Ich verwende nur die besten Zutaten.</p>
+      </article>
 
-    <a class="hotspot hotspot-hero" href="#angebot" aria-label="Zum Angebot springen"></a>
-    <a class="hotspot hotspot-about" href="#angebot" aria-label="Mehr über das Angebot erfahren"></a>
-    <a class="hotspot hotspot-gallery" href="#kontakt" aria-label="Zur Galerie springen"></a>
-  </div>
+      <article class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <ellipse cx="50" cy="52" rx="28" ry="20" fill="#d4a574" stroke="#b08050" stroke-width="1.5"/>
+            <circle cx="40" cy="48" r="3" fill="#b08050" opacity="0.4"/>
+            <circle cx="55" cy="44" r="2.5" fill="#b08050" opacity="0.4"/>
+            <circle cx="48" cy="58" r="2" fill="#b08050" opacity="0.3"/>
+            <circle cx="60" cy="55" r="2.5" fill="#b08050" opacity="0.4"/>
+            <path d="M42 30 Q39 22 42 15" stroke="#c8a84e" stroke-width="1.5" fill="none" opacity="0.4" stroke-linecap="round" />
+            <path d="M52 28 Q49 20 52 12" stroke="#c8a84e" stroke-width="1.5" fill="none" opacity="0.35" stroke-linecap="round" />
+            <path d="M62 30 Q59 23 62 16" stroke="#c8a84e" stroke-width="1.2" fill="none" opacity="0.3" stroke-linecap="round" />
+          </svg>
+        </div>
+        <h3>Immer Frisch</h3>
+        <p>Gebäck, das immer frisch und lecker ist.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="angebot" id="angebot">
+    <div class="page-shell angebot-shell">
+      <h2 class="section-title">Unser Angebot</h2>
+      <p class="section-kicker">Entdecke meine Auswahl an köstlichen, hausgemachten Leckereien.</p>
+
+      <div class="angebot-grid">
+        <article class="angebot-card">
+          <div class="angebot-image section-card"><div class="angebot-shot shot-kekse"></div></div>
+          <div class="card-label"><span>Kekse</span></div>
+        </article>
+
+        <article class="angebot-card">
+          <div class="angebot-image section-card"><div class="angebot-shot shot-gebaeck"></div></div>
+          <div class="card-label"><span>Gebäck</span></div>
+        </article>
+
+        <article class="angebot-card">
+          <div class="angebot-image section-card"><div class="angebot-shot shot-kuchen"></div></div>
+          <div class="card-label"><span>Kuchen</span></div>
+        </article>
+
+        <article class="angebot-card">
+          <div class="angebot-image section-card"><div class="angebot-shot shot-torten"></div></div>
+          <div class="card-label"><span>Torten</span></div>
+        </article>
+      </div>
+
+      <div class="angebot-cta">
+        <a class="ornate-btn" href="#kontakt">Zur Galerie</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="kontakt">
+    <div class="page-shell footer-shell">
+      <p class="footer-brand">Zuckerpeter</p>
+      <p class="footer-line">Backen mit Leidenschaft</p>
+      <p class="footer-copy">&copy; {new Date().getFullYear()} Zuckerpeter. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
 </main>
 
 <style>
-  .reference-page {
-    padding: 0.9rem;
+  .landing {
+    padding: 1rem 0 2rem;
   }
 
-  .reference-frame {
+  .hero {
+    padding-top: 0.2rem;
+  }
+
+  .hero-stage {
     position: relative;
-    width: min(899px, calc(100vw - 1.8rem));
-    margin: 0 auto;
-    box-shadow: 0 28px 55px rgba(53, 26, 10, 0.26);
-    background: #f3e2c7;
+    aspect-ratio: 899 / 405;
+    border-radius: 1.2rem 1.2rem 0 0;
+    overflow: hidden;
+    box-shadow: 0 24px 50px rgba(47, 22, 8, 0.3);
   }
 
-  .reference-image {
-    width: 100%;
-    height: auto;
+  .hero-backdrop {
+    position: absolute;
+    inset: 0;
+    background-image: var(--reference-image);
+    background-size: 100% auto;
+    background-position: center top;
+    filter: saturate(0.92) contrast(0.95) brightness(0.86);
+    transform: scale(1.03);
   }
 
-  .anchor {
+  .hero-backdrop::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(255, 214, 143, 0.08), transparent 24%),
+      linear-gradient(180deg, rgba(61, 30, 11, 0.06), rgba(61, 30, 11, 0.3));
+  }
+
+  .hero-glow {
+    position: absolute;
+    left: 50%;
+    top: 47%;
+    width: 42%;
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 226, 162, 0.38), rgba(255, 226, 162, 0) 68%);
+    filter: blur(10px);
+  }
+
+  .hero-logo {
+    position: absolute;
+    left: 50%;
+    top: 49%;
+    width: min(49%, 26rem);
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(0 16px 28px rgba(44, 18, 7, 0.36));
+  }
+
+  .hero-copy {
+    margin-top: -0.2rem;
+    padding: 1.45rem 1rem 3rem;
+    text-align: center;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(235, 197, 133, 0.22), transparent 24%),
+      linear-gradient(180deg, #654021 0%, #80512b 42%, #8c5a30 56%, #f1e3cd 100%);
+    color: #fff7ea;
+    border-radius: 0 0 2.4rem 2.4rem;
+    box-shadow: 0 18px 38px rgba(47, 22, 8, 0.18);
+    position: relative;
+  }
+
+  .hero-copy::after {
+    content: '';
     position: absolute;
     left: 0;
-    width: 1px;
-    height: 1px;
+    right: 0;
+    bottom: -1.6rem;
+    height: 3.3rem;
+    background:
+      radial-gradient(circle at 8% 50%, rgba(244, 231, 210, 0.9), transparent 16%),
+      radial-gradient(circle at 24% 65%, rgba(244, 231, 210, 0.84), transparent 18%),
+      radial-gradient(circle at 40% 36%, rgba(244, 231, 210, 0.9), transparent 18%),
+      radial-gradient(circle at 60% 65%, rgba(244, 231, 210, 0.82), transparent 18%),
+      radial-gradient(circle at 78% 42%, rgba(244, 231, 210, 0.9), transparent 18%),
+      radial-gradient(circle at 92% 60%, rgba(244, 231, 210, 0.88), transparent 16%);
+    filter: blur(8px);
   }
 
-  .hotspot {
-    position: absolute;
-    display: block;
-    border-radius: 999px;
-    outline: none;
+  .hero-title {
+    font-family: var(--heading);
+    font-size: clamp(2.2rem, 4.8vw, 3.35rem);
+    line-height: 1.12;
+    font-weight: 800;
+    text-shadow: 0 4px 14px rgba(58, 29, 11, 0.25);
   }
 
-  .hotspot:focus-visible {
+  .hero-subtitle {
+    margin: 0.8rem 0 1.5rem;
+    font-size: 1.12rem;
+    color: #f7e5c1;
+  }
+
+  .about {
+    padding-top: 3rem;
+  }
+
+  .about-shell {
+    display: grid;
+    grid-template-columns: 0.95fr 1.15fr;
+    gap: 2.2rem;
+    align-items: center;
+    border-radius: 2rem;
+    padding: 2.25rem 2.5rem;
+  }
+
+  .about-copy {
+    text-align: center;
+  }
+
+  .about-copy p {
+    margin: 1rem 0 1.65rem;
+    color: var(--text-soft);
+    font-size: 1.04rem;
+    line-height: 1.9;
+  }
+
+  .about-art {
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-medallion {
+    position: relative;
+    width: min(32rem, 100%);
+    aspect-ratio: 1.24;
+    border-radius: 50% / 44%;
+    background:
+      radial-gradient(circle at 50% 30%, rgba(255, 225, 157, 0.42), rgba(255, 225, 157, 0) 52%),
+      linear-gradient(180deg, #f1ddbb, #f8f0e3);
+    border: 4px solid rgba(214, 156, 57, 0.9);
     box-shadow:
-      0 0 0 4px rgba(255, 247, 226, 0.95),
-      0 0 0 8px rgba(124, 61, 16, 0.9);
+      inset 0 0 0 2px rgba(108, 60, 24, 0.16),
+      inset 0 0 0 12px rgba(231, 208, 173, 0.24),
+      0 22px 32px rgba(61, 28, 10, 0.16);
+    overflow: hidden;
   }
 
-  .hotspot-hero {
-    left: 38.7%;
-    top: 36.4%;
-    width: 22.6%;
-    height: 4.5%;
+  .about-crop {
+    position: absolute;
+    inset: 0.75rem;
+    border-radius: inherit;
+    background-image: var(--reference-image);
+    background-size: 56.2rem auto;
+    background-repeat: no-repeat;
+    background-position: -24.7rem -24.6rem;
   }
 
-  .hotspot-about {
-    left: 11.2%;
-    top: 59.1%;
-    width: 22.4%;
-    height: 4.4%;
+  .features {
+    padding-top: 1.2rem;
   }
 
-  .hotspot-gallery {
-    left: 39.3%;
-    top: 92.6%;
-    width: 21.7%;
-    height: 4.2%;
+  .features-shell {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    border-radius: 1.5rem;
+    padding: 1rem 0.7rem;
   }
 
-  @media (max-width: 560px) {
-    .reference-page {
-      padding: 0.6rem;
+  .feature {
+    text-align: center;
+    padding: 0.95rem 1rem 1.1rem;
+  }
+
+  .feature:not(:last-child) {
+    border-right: 1px solid rgba(124, 73, 31, 0.14);
+  }
+
+  .feature-icon {
+    width: 5.2rem;
+    height: 4.2rem;
+    margin: 0 auto 0.7rem;
+  }
+
+  .feature-icon svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 4px 8px rgba(70, 39, 16, 0.1));
+  }
+
+  .feature h3 {
+    font-family: var(--heading);
+    font-size: 1.45rem;
+    line-height: 1.1;
+    color: var(--text);
+  }
+
+  .feature p {
+    margin-top: 0.3rem;
+    font-size: 0.98rem;
+    color: var(--text-soft);
+  }
+
+  .angebot {
+    padding-top: 1.8rem;
+  }
+
+  .angebot-shell {
+    text-align: center;
+  }
+
+  .angebot-shell .section-kicker {
+    margin-top: 0.7rem;
+  }
+
+  .angebot-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.8rem;
+  }
+
+  .angebot-card {
+    position: relative;
+  }
+
+  .angebot-image {
+    padding: 0.42rem;
+    border-radius: 0.35rem;
+    overflow: hidden;
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+  }
+
+  .angebot-card:hover .angebot-image {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 34px rgba(52, 23, 8, 0.18);
+  }
+
+  .angebot-shot {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 0.18rem;
+    background-image: var(--reference-image);
+    background-size: 56.2rem auto;
+    background-repeat: no-repeat;
+  }
+
+  .angebot-shot::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(255, 237, 208, 0.14), transparent 34%),
+      linear-gradient(180deg, transparent 52%, rgba(61, 26, 8, 0.1));
+  }
+
+  .shot-kekse {
+    background-position: -2rem -42.35rem;
+  }
+
+  .shot-gebaeck {
+    background-position: -15.3rem -42.35rem;
+  }
+
+  .shot-kuchen {
+    background-position: -28.95rem -42.35rem;
+  }
+
+  .shot-torten {
+    background-position: -42.4rem -42.35rem;
+  }
+
+  .card-label {
+    position: relative;
+    margin-top: -0.8rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .card-label span {
+    display: inline-block;
+    min-width: 70%;
+    padding: 0.55rem 1rem;
+    background: linear-gradient(180deg, var(--wood-1) 0%, var(--wood-2) 58%, var(--wood-3) 100%);
+    border: 1px solid rgba(249, 216, 144, 0.45);
+    border-radius: 0.2rem;
+    color: #f7e7be;
+    font-family: var(--heading);
+    font-size: 1.55rem;
+    line-height: 1;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 10px 18px rgba(61, 26, 8, 0.2);
+  }
+
+  .angebot-cta {
+    margin-top: 2rem;
+  }
+
+  .footer {
+    padding-top: 2rem;
+  }
+
+  .footer-shell {
+    text-align: center;
+    color: var(--text-soft);
+  }
+
+  .footer-brand {
+    font-family: var(--heading);
+    font-size: 1.85rem;
+    color: var(--text);
+  }
+
+  .footer-line {
+    margin-top: 0.2rem;
+  }
+
+  .footer-copy {
+    margin-top: 0.7rem;
+    font-size: 0.9rem;
+    opacity: 0.85;
+  }
+
+  @media (max-width: 900px) {
+    .about-shell {
+      grid-template-columns: 1fr;
+      padding: 2rem 1.4rem;
     }
 
-    .reference-frame {
-      width: calc(100vw - 1.2rem);
+    .about-art {
+      order: -1;
+    }
+
+    .angebot-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card-label span {
+      font-size: 1.35rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .landing {
+      padding-top: 0.6rem;
+    }
+
+    .page-shell {
+      width: min(960px, calc(100vw - 1rem));
+    }
+
+    .hero-copy {
+      padding: 1rem 0.8rem 2.8rem;
+      border-radius: 0 0 1.7rem 1.7rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+
+    .features-shell {
+      grid-template-columns: 1fr;
+      padding: 0.5rem;
+    }
+
+    .feature:not(:last-child) {
+      border-right: 0;
+      border-bottom: 1px solid rgba(124, 73, 31, 0.14);
+    }
+
+    .angebot-grid {
+      gap: 0.85rem;
     }
   }
 </style>
