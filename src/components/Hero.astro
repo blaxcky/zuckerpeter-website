@@ -3,93 +3,281 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <header class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-inner">
-    <div class="hero-logo-wrap">
-      <img src={`${base}logo.png`} alt="Zuckerpeter Logo" class="hero-logo" width="320" height="320" />
+  <div class="hero-stage">
+    <div class="hero-scenery" aria-hidden="true">
+      <span class="scenery-window"></span>
+      <span class="scenery-shelf shelf-left"></span>
+      <span class="scenery-shelf shelf-right"></span>
+      <span class="scenery-counter"></span>
+      <span class="scenery-flour flour-left"></span>
+      <span class="scenery-flour flour-right"></span>
     </div>
-    <h1>Willkommen bei Zuckerpeter!</h1>
-    <p class="hero-subtitle">Hausgemachte Leckereien mit Leidenschaft gebacken.</p>
-    <div class="hero-cta">
-      <a href="#angebot" class="btn-ornate">Jetzt bestellen!</a>
+    <div class="hero-logo-shell">
+      <img src={`${base}logo.png`} alt="Zuckerpeter Logo" class="hero-logo" width="420" height="420" />
     </div>
   </div>
-  <div class="hero-fade"></div>
+
+  <div class="hero-copy">
+    <h1>Willkommen bei Zuckerpeter!</h1>
+    <p class="hero-subtitle">Hausgemachte Leckereien mit Leidenschaft gebacken.</p>
+    <a href="#angebot" class="btn-ornate">Jetzt bestellen!</a>
+  </div>
 </header>
 
 <style>
   .hero {
     position: relative;
-    text-align: center;
-    padding: 3rem 1.5rem 4rem;
-    overflow: hidden;
+    padding: 2rem 1.5rem 4.5rem;
+    overflow: clip;
   }
 
-  /* Warm radial glow behind the logo area */
-  .hero-bg {
+  .hero::after {
+    content: '';
     position: absolute;
-    inset: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 10rem;
     background:
-      radial-gradient(ellipse 70% 60% at 50% 30%, rgba(200, 168, 78, 0.15) 0%, transparent 70%),
-      radial-gradient(ellipse 100% 80% at 50% 0%, rgba(245, 230, 211, 0.6) 0%, transparent 80%);
+      radial-gradient(circle at 15% 30%, rgba(255, 246, 228, 0.8), transparent 30%),
+      radial-gradient(circle at 82% 25%, rgba(255, 246, 228, 0.65), transparent 28%),
+      linear-gradient(180deg, transparent, rgba(244, 230, 204, 0.9) 55%, #f7eddc);
+    filter: blur(10px);
     pointer-events: none;
   }
 
-  .hero-inner {
+  .hero-stage {
     position: relative;
-    max-width: 700px;
+    max-width: 1020px;
     margin: 0 auto;
+    min-height: 27rem;
+    border-radius: 2rem 2rem 1rem 1rem;
+    background:
+      radial-gradient(circle at 50% 12%, rgba(255, 221, 155, 0.7), transparent 20%),
+      linear-gradient(180deg, rgba(255, 239, 208, 0.22), rgba(0, 0, 0, 0) 18%),
+      linear-gradient(180deg, rgba(69, 36, 16, 0.15), rgba(69, 36, 16, 0.38)),
+      linear-gradient(135deg, #9b6b40 0%, #7e532d 45%, #5d361d 100%);
+    box-shadow: var(--shadow-deep);
+    isolation: isolate;
   }
 
-  .hero-logo-wrap {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 1.5rem;
+  .hero-scenery {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    overflow: hidden;
   }
 
-  /* Soft golden glow behind the logo */
-  .hero-logo-wrap::before {
+  .hero-scenery::before {
     content: '';
     position: absolute;
-    inset: -20px;
+    inset: 0;
+    background:
+      radial-gradient(circle at 15% 65%, rgba(54, 29, 12, 0.45), transparent 22%),
+      radial-gradient(circle at 84% 62%, rgba(54, 29, 12, 0.34), transparent 20%),
+      linear-gradient(180deg, rgba(255, 236, 205, 0.18), transparent 30%);
+    mix-blend-mode: soft-light;
+  }
+
+  .scenery-window {
+    position: absolute;
+    right: 3.5rem;
+    top: 1.8rem;
+    width: 5.8rem;
+    height: 8.4rem;
+    border-radius: 0.5rem;
+    background:
+      linear-gradient(180deg, rgba(237, 220, 191, 0.95), rgba(249, 241, 226, 0.8)),
+      linear-gradient(90deg, transparent 46%, rgba(139, 87, 39, 0.8) 46% 54%, transparent 54%);
+    box-shadow:
+      inset 0 0 0 6px rgba(118, 71, 31, 0.72),
+      inset 0 0 25px rgba(255, 255, 255, 0.3),
+      0 18px 20px rgba(47, 23, 9, 0.18);
+    opacity: 0.9;
+  }
+
+  .scenery-window::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 48%, rgba(139, 87, 39, 0.8) 48% 52%, transparent 52%);
+  }
+
+  .scenery-shelf {
+    position: absolute;
+    top: 4.4rem;
+    width: 12rem;
+    height: 0.7rem;
+    background: linear-gradient(180deg, #84532c, #5c3519);
+    border-radius: 999px;
+    box-shadow:
+      0 0.5rem 0 rgba(51, 28, 13, 0.24),
+      0 0 0 1px rgba(255, 215, 166, 0.1);
+  }
+
+  .scenery-shelf::before,
+  .scenery-shelf::after {
+    content: '';
+    position: absolute;
+    bottom: 0.7rem;
+    width: 1.5rem;
+    border-radius: 0.5rem 0.5rem 0.2rem 0.2rem;
+    background: linear-gradient(180deg, #dcb582, #aa7442);
+    box-shadow: 2.4rem 0 0 #e3c18f, 5.2rem 0 0 #7c4e28, 7.3rem 0 0 #b5834f;
+  }
+
+  .scenery-shelf::before {
+    left: 0.6rem;
+    height: 3.1rem;
+  }
+
+  .scenery-shelf::after {
+    left: 1.6rem;
+    width: 1rem;
+    height: 2.3rem;
+    opacity: 0.7;
+  }
+
+  .shelf-left {
+    left: 2.6rem;
+  }
+
+  .shelf-right {
+    right: 10rem;
+    width: 10rem;
+  }
+
+  .scenery-counter {
+    position: absolute;
+    left: 6%;
+    right: 10%;
+    bottom: 2.8rem;
+    height: 5.3rem;
+    border-radius: 1rem 1rem 1.4rem 1.4rem;
+    background:
+      linear-gradient(180deg, rgba(255, 238, 210, 0.08), transparent 32%),
+      linear-gradient(180deg, #9b673b 0%, #6d4120 100%);
+    box-shadow:
+      0 0 0 1px rgba(255, 225, 182, 0.14),
+      inset 0 1px 0 rgba(255, 241, 210, 0.14),
+      0 18px 26px rgba(25, 10, 3, 0.34);
+    transform: perspective(850px) rotateX(63deg);
+    transform-origin: bottom;
+  }
+
+  .scenery-flour {
+    position: absolute;
+    bottom: 4.8rem;
+    width: 7rem;
+    height: 2rem;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(200, 168, 78, 0.2) 0%, transparent 70%);
-    z-index: -1;
+    background: radial-gradient(circle, rgba(251, 245, 231, 0.85), rgba(251, 245, 231, 0));
+    filter: blur(6px);
+  }
+
+  .flour-left {
+    left: 10%;
+  }
+
+  .flour-right {
+    right: 14%;
+  }
+
+  .hero-logo-shell {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding-bottom: 1.5rem;
+  }
+
+  .hero-logo-shell::before {
+    content: '';
+    position: absolute;
+    width: min(27rem, 70vw);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 224, 156, 0.44), rgba(255, 224, 156, 0) 68%);
+    filter: blur(14px);
   }
 
   .hero-logo {
-    border-radius: 50%;
-    filter: drop-shadow(0 6px 30px rgba(92, 61, 46, 0.35));
+    position: relative;
+    width: min(28rem, 82vw);
+    filter: drop-shadow(0 14px 22px rgba(39, 18, 6, 0.35));
+  }
+
+  .hero-copy {
+    position: relative;
+    z-index: 1;
+    max-width: 52rem;
+    margin: -0.6rem auto 0;
+    text-align: center;
+    padding: 0 1rem;
   }
 
   h1 {
     font-family: var(--font-heading);
-    font-size: clamp(2rem, 5vw, 3.2rem);
-    font-weight: 900;
-    color: var(--color-brown-dark);
-    margin-bottom: 0.5rem;
-    text-shadow: 0 1px 2px rgba(200, 168, 78, 0.15);
+    font-size: clamp(2.25rem, 5vw, 3.45rem);
+    line-height: 1.12;
+    color: #fff9ef;
+    text-shadow:
+      0 2px 0 rgba(58, 29, 11, 0.35),
+      0 8px 18px rgba(58, 29, 11, 0.32);
   }
 
   .hero-subtitle {
+    margin: 0.85rem auto 1.8rem;
+    max-width: 38rem;
+    color: #f5e1bb;
     font-size: 1.15rem;
-    color: var(--color-text-light);
-    margin-bottom: 2rem;
-    font-style: italic;
   }
 
-  .hero-cta {
-    padding: 0 1rem;
-  }
+  @media (max-width: 720px) {
+    .hero {
+      padding-top: 1rem;
+      padding-bottom: 3.5rem;
+    }
 
-  /* Soft gradient fade into next section */
-  .hero-fade {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 80px;
-    background: linear-gradient(to bottom, transparent, var(--color-bg-alt));
-    pointer-events: none;
+    .hero-stage {
+      min-height: 21rem;
+      border-radius: 1.4rem 1.4rem 0.8rem 0.8rem;
+    }
+
+    .scenery-window {
+      right: 1.25rem;
+      top: 1.1rem;
+      width: 4rem;
+      height: 6rem;
+    }
+
+    .shelf-left {
+      left: 1rem;
+      width: 9rem;
+    }
+
+    .shelf-right {
+      right: 5.2rem;
+      top: 5.2rem;
+      width: 7rem;
+    }
+
+    .scenery-counter {
+      left: 4%;
+      right: 4%;
+      bottom: 2rem;
+    }
+
+    .hero-logo {
+      width: min(21rem, 92vw);
+    }
+
+    .hero-copy {
+      margin-top: -0.2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+    }
   }
 </style>

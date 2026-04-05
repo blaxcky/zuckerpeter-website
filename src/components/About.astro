@@ -1,12 +1,11 @@
 ---
+const base = import.meta.env.BASE_URL;
 ---
 
 <section class="about" id="ueber">
-  <div class="about-top-fade"></div>
-  <div class="about-inner">
+  <div class="about-card paper-panel">
     <div class="about-text">
       <h2>Über Zuckerpeter</h2>
-      <div class="about-underline"></div>
       <p>
         Hallo! Ich bin Zuckerpeter, leidenschaftlicher Hobbybäcker mit einer Liebe für
         hausgemachte Leckereien. Mit viel Herz und Hingabe bereite ich in meiner gemütlichen
@@ -14,139 +13,44 @@
         an erster Stelle. Lass dich von meinen Kreationen begeistern und erfahre mehr über
         mein Angebot!
       </p>
-      <div class="about-cta">
-        <a href="#angebot" class="btn-ornate">Mehr erfahren</a>
+      <a href="#angebot" class="btn-ornate">Mehr erfahren</a>
+    </div>
+
+    <div class="about-art">
+      <div class="about-art-frame">
+        <img src={`${base}logo.png`} alt="Zuckerpeter Backszene" width="360" height="360" />
       </div>
     </div>
-    <div class="about-illustration">
-      {/* Illustrated baker SVG */}
-      <svg viewBox="0 0 260 260" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="about-svg">
-        {/* Background circle with warm glow */}
-        <defs>
-          <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#f5e6d3" />
-            <stop offset="100%" stop-color="#eddcc8" />
-          </radialGradient>
-          <radialGradient id="inner-glow" cx="50%" cy="45%" r="45%">
-            <stop offset="0%" stop-color="#faf3ea" stop-opacity="0.8"/>
-            <stop offset="100%" stop-color="#f5e6d3" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
-        <circle cx="130" cy="130" r="120" fill="url(#glow)" stroke="#c8a84e" stroke-width="2" opacity="0.6"/>
-        <circle cx="130" cy="130" r="120" fill="url(#inner-glow)"/>
-
-        {/* Cutting board */}
-        <rect x="50" y="140" rx="8" ry="8" width="160" height="90" fill="#c89b6b" stroke="#a07040" stroke-width="1.5"/>
-        <rect x="55" y="145" rx="5" ry="5" width="150" height="80" fill="#d4a574" opacity="0.6"/>
-        {/* Wood grain lines */}
-        <line x1="60" y1="160" x2="200" y2="160" stroke="#b08050" stroke-width="0.5" opacity="0.4"/>
-        <line x1="60" y1="180" x2="200" y2="180" stroke="#b08050" stroke-width="0.5" opacity="0.4"/>
-        <line x1="60" y1="200" x2="200" y2="200" stroke="#b08050" stroke-width="0.5" opacity="0.4"/>
-
-        {/* Rolling pin */}
-        <rect x="160" y="148" rx="6" ry="6" width="70" height="14" fill="#d4a574" stroke="#a07040" stroke-width="1" transform="rotate(-15 195 155)"/>
-        <rect x="155" y="150" rx="3" ry="3" width="12" height="10" fill="#b08050" transform="rotate(-15 161 155)"/>
-        <rect x="223" y="142" rx="3" ry="3" width="12" height="10" fill="#b08050" transform="rotate(-15 229 147)"/>
-
-        {/* Cookies on board */}
-        <circle cx="90" cy="175" r="11" fill="#d4a574" stroke="#b08050" stroke-width="1"/>
-        <circle cx="90" cy="175" r="5" fill="#c0392b" opacity="0.7"/>
-        <circle cx="115" cy="185" r="10" fill="#d4a574" stroke="#b08050" stroke-width="1"/>
-        <circle cx="115" cy="185" r="4" fill="#c0392b" opacity="0.7"/>
-        <circle cx="140" cy="172" r="11" fill="#d4a574" stroke="#b08050" stroke-width="1"/>
-        <circle cx="140" cy="172" r="5" fill="#c0392b" opacity="0.7"/>
-        <circle cx="102" cy="198" r="9" fill="#d4a574" stroke="#b08050" stroke-width="1"/>
-        <circle cx="102" cy="198" r="4" fill="#c0392b" opacity="0.7"/>
-        <circle cx="130" cy="195" r="10" fill="#d4a574" stroke="#b08050" stroke-width="1"/>
-        <circle cx="130" cy="195" r="5" fill="#c0392b" opacity="0.7"/>
-
-        {/* Baker figure */}
-        {/* Head */}
-        <circle cx="130" cy="65" r="28" fill="#e8c99b"/>
-        {/* Chef hat */}
-        <ellipse cx="130" cy="40" rx="30" ry="18" fill="white" stroke="#ddd" stroke-width="1"/>
-        <rect x="110" y="38" width="40" height="15" fill="white"/>
-        {/* Hair */}
-        <path d="M105 60 Q108 48 115 52" fill="#5c3d2e"/>
-        <path d="M155 60 Q152 48 145 52" fill="#5c3d2e"/>
-        {/* Face features - simple and friendly */}
-        <circle cx="120" cy="62" r="2.5" fill="#5c3d2e"/>
-        <circle cx="140" cy="62" r="2.5" fill="#5c3d2e"/>
-        <path d="M123 74 Q130 80 137 74" stroke="#5c3d2e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-        {/* Apron body */}
-        <path d="M105 90 L100 145 L160 145 L155 90 Q130 100 105 90Z" fill="#5c3d2e"/>
-        <path d="M108 95 L104 140 L156 140 L152 95 Q130 103 108 95Z" fill="#6b4f10" opacity="0.3"/>
-        {/* Apron strings */}
-        <line x1="115" y1="95" x2="110" y2="145" stroke="#7a5a3a" stroke-width="1"/>
-        <line x1="145" y1="95" x2="150" y2="145" stroke="#7a5a3a" stroke-width="1"/>
-        {/* Arms */}
-        <path d="M105 95 Q80 110 75 140" stroke="#e8c99b" stroke-width="10" fill="none" stroke-linecap="round"/>
-        <path d="M155 95 Q175 115 185 140" stroke="#e8c99b" stroke-width="10" fill="none" stroke-linecap="round"/>
-        {/* Hands */}
-        <circle cx="75" cy="142" r="8" fill="#e8c99b"/>
-        <circle cx="185" cy="142" r="8" fill="#e8c99b"/>
-
-        {/* Steam wisps from cookies */}
-        <path d="M90 158 Q87 150 90 143" stroke="#c8a84e" stroke-width="1" fill="none" opacity="0.3" stroke-linecap="round"/>
-        <path d="M140 155 Q137 147 140 140" stroke="#c8a84e" stroke-width="1" fill="none" opacity="0.3" stroke-linecap="round"/>
-      </svg>
-    </div>
   </div>
-  <div class="about-bottom-fade"></div>
 </section>
 
 <style>
   .about {
-    position: relative;
-    padding: 5rem 1.5rem 4rem;
-    background: var(--color-bg-alt);
+    padding: 1.2rem 1.5rem 2.4rem;
   }
 
-  .about-top-fade {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    background: linear-gradient(to bottom, var(--color-bg-alt), transparent);
-    pointer-events: none;
-  }
-
-  .about-bottom-fade {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    background: linear-gradient(to top, var(--color-bg), transparent);
-    pointer-events: none;
-  }
-
-  .about-inner {
-    max-width: 940px;
+  .about-card {
+    max-width: 1030px;
     margin: 0 auto;
-    display: flex;
+    border-radius: 2.2rem;
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 2rem;
     align-items: center;
-    gap: 3rem;
+    padding: 2.6rem clamp(1.5rem, 4vw, 3.25rem);
   }
 
   .about-text {
-    flex: 1;
+    max-width: 27rem;
+    text-align: center;
+    justify-self: center;
   }
 
   h2 {
     font-family: var(--font-heading);
-    font-size: clamp(1.6rem, 4vw, 2.4rem);
-    font-weight: 700;
+    font-size: clamp(1.95rem, 3vw, 2.6rem);
     color: var(--color-brown-dark);
-    margin-bottom: 0.5rem;
-  }
-
-  .about-underline {
-    width: 80px;
-    height: 2px;
-    background: linear-gradient(90deg, var(--color-gold), transparent);
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.25rem;
   }
 
   p {
@@ -156,37 +60,56 @@
     margin-bottom: 1.8rem;
   }
 
-  .about-cta {
-    padding-left: 0;
+  .about-art {
+    display: flex;
+    justify-content: center;
   }
 
-  .about-illustration {
-    flex-shrink: 0;
-    width: 260px;
-    height: 260px;
+  .about-art-frame {
+    position: relative;
+    width: min(32rem, 100%);
+    aspect-ratio: 1.22;
+    border-radius: 50% / 44%;
+    background:
+      radial-gradient(circle at 50% 32%, rgba(255, 225, 160, 0.44), rgba(255, 225, 160, 0) 55%),
+      linear-gradient(180deg, rgba(133, 83, 39, 0.12), rgba(255, 255, 255, 0.18)),
+      linear-gradient(135deg, #efd5ae, #f6ebd8);
+    border: 4px solid rgba(211, 152, 53, 0.74);
+    box-shadow:
+      inset 0 0 0 10px rgba(126, 76, 34, 0.06),
+      0 24px 34px rgba(90, 47, 18, 0.2);
+    display: grid;
+    place-items: center;
+    padding: 1.25rem;
   }
 
-  .about-svg {
-    width: 100%;
-    height: 100%;
-    filter: drop-shadow(0 4px 15px rgba(92, 61, 46, 0.15));
+  .about-art-frame::after {
+    content: '';
+    position: absolute;
+    inset: 1.1rem;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 2px rgba(126, 76, 34, 0.16);
+    pointer-events: none;
   }
 
-  @media (max-width: 720px) {
-    .about-inner {
-      flex-direction: column;
-      text-align: center;
+  .about-art-frame img {
+    width: 92%;
+    filter: drop-shadow(0 10px 16px rgba(54, 24, 8, 0.18));
+  }
+
+  @media (max-width: 780px) {
+    .about-card {
+      grid-template-columns: 1fr;
+      border-radius: 1.6rem;
+      padding: 2rem 1.35rem;
     }
 
-    .about-illustration {
-      width: 200px;
-      height: 200px;
+    .about-art {
       order: -1;
     }
 
-    .about-underline {
-      margin-left: auto;
-      margin-right: auto;
+    .about-art-frame {
+      width: min(25rem, 100%);
     }
   }
 </style>
