@@ -1,0 +1,58 @@
+---
+const features = [
+  { icon: '🧈', title: 'Hausgemacht', desc: 'Mit Liebe von Hand gemacht.' },
+  { icon: '🌾', title: 'Hochwertige Zutaten', desc: 'Ich verwende nur die besten Zutaten.' },
+  { icon: '🍪', title: 'Immer Frisch', desc: 'Gebäck, das immer frisch und lecker ist.' },
+];
+---
+
+<section class="features">
+  <div class="features-grid">
+    {features.map((f) => (
+      <div class="feature-card">
+        <span class="feature-icon">{f.icon}</span>
+        <h3>{f.title}</h3>
+        <p>{f.desc}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .features {
+    padding: 3rem 1.5rem;
+    background: var(--color-bg);
+  }
+
+  .features-grid {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .feature-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .feature-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-brown-dark);
+    margin-bottom: 0.4rem;
+  }
+
+  p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+  }
+</style>
