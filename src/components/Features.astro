@@ -1,121 +1,161 @@
----
----
-
-<section class="features">
-  <div class="features-grid paper-panel">
-    <div class="feature-card">
-      <div class="feature-icon-wrap">
-        <svg viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="feature-svg" aria-hidden="true">
-          <rect x="15" y="30" rx="4" ry="4" width="40" height="28" fill="#f0d48a" stroke="#c8a84e" stroke-width="1.5"/>
-          <rect x="20" y="35" rx="2" ry="2" width="12" height="18" fill="#f5e0a0" opacity="0.6"/>
-          <path d="M58 36 Q65 30 68 38 Q71 46 65 44" fill="#f0d48a" stroke="#c8a84e" stroke-width="1"/>
-          <rect x="25" y="15" rx="5" ry="5" width="55" height="10" fill="#d4a574" stroke="#a07040" stroke-width="1" transform="rotate(-8 52 20)"/>
-          <rect x="20" y="16" rx="3" ry="3" width="10" height="8" fill="#b08050" transform="rotate(-8 25 20)"/>
-          <rect x="75" y="12" rx="3" ry="3" width="10" height="8" fill="#b08050" transform="rotate(-8 80 16)"/>
-          <path d="M78 50 Q80 46 84 48 Q88 46 90 50 Q88 56 84 60 Q80 56 78 50Z" fill="#c0392b" opacity="0.4"/>
-        </svg>
-      </div>
-      <h3>Hausgemacht</h3>
-      <p>Mit Liebe von Hand gemacht.</p>
+<section class="features" id="features">
+  <div class="features-inner">
+    <div class="features-header animate-on-scroll">
+      <span class="features-label">Unsere Werte</span>
+      <h2 class="features-heading">Was uns <em>besonders</em> macht</h2>
     </div>
-
-    <div class="feature-card">
-      <div class="feature-icon-wrap">
-        <svg viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="feature-svg" aria-hidden="true">
-          <path d="M30 25 Q30 18 40 15 L60 15 Q70 18 70 25 L72 65 Q72 70 65 70 L35 70 Q28 70 28 65Z" fill="#f5e6d3" stroke="#b08050" stroke-width="1.5"/>
-          <path d="M35 25 Q50 20 65 25" stroke="#b08050" stroke-width="2" fill="none"/>
-          <ellipse cx="50" cy="22" rx="4" ry="3" fill="#b08050" opacity="0.5"/>
-          <rect x="38" y="38" width="24" height="2" rx="1" fill="#b08050" opacity="0.4"/>
-          <rect x="40" y="44" width="20" height="2" rx="1" fill="#b08050" opacity="0.3"/>
-          <rect x="42" y="50" width="16" height="2" rx="1" fill="#b08050" opacity="0.3"/>
-          <line x1="76" y1="60" x2="82" y2="20" stroke="#c8a84e" stroke-width="1.5"/>
-          <ellipse cx="82" cy="22" rx="3" ry="6" fill="#ddc173" transform="rotate(-10 82 22)"/>
-          <ellipse cx="80" cy="30" rx="3" ry="5" fill="#ddc173" transform="rotate(10 80 30)"/>
-          <ellipse cx="83" cy="36" rx="3" ry="5" fill="#ddc173" transform="rotate(-10 83 36)"/>
-        </svg>
-      </div>
-      <h3>Hochwertige Zutaten</h3>
-      <p>Ich verwende nur die besten Zutaten.</p>
-    </div>
-
-    <div class="feature-card">
-      <div class="feature-icon-wrap">
-        <svg viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="feature-svg" aria-hidden="true">
-          <ellipse cx="50" cy="52" rx="28" ry="20" fill="#d4a574" stroke="#b08050" stroke-width="1.5"/>
-          <circle cx="40" cy="48" r="3" fill="#b08050" opacity="0.4"/>
-          <circle cx="55" cy="44" r="2.5" fill="#b08050" opacity="0.4"/>
-          <circle cx="48" cy="58" r="2" fill="#b08050" opacity="0.3"/>
-          <circle cx="60" cy="55" r="2.5" fill="#b08050" opacity="0.4"/>
-          <circle cx="38" cy="55" r="2" fill="#b08050" opacity="0.3"/>
-          <path d="M42 30 Q39 22 42 15" stroke="#c8a84e" stroke-width="1.5" fill="none" opacity="0.4" stroke-linecap="round" />
-          <path d="M52 28 Q49 20 52 12" stroke="#c8a84e" stroke-width="1.5" fill="none" opacity="0.35" stroke-linecap="round" />
-          <path d="M62 30 Q59 23 62 16" stroke="#c8a84e" stroke-width="1.2" fill="none" opacity="0.3" stroke-linecap="round" />
-        </svg>
-      </div>
-      <h3>Immer Frisch</h3>
-      <p>Gebäck, das immer frisch und lecker ist.</p>
+    <div class="features-grid">
+      <article class="feature-card animate-on-scroll" style="transition-delay: 0.1s">
+        <div class="feature-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M24 4C14 4 8 12 8 20c0 12 16 24 16 24s16-12 16-24c0-8-6-16-16-16z"/>
+            <circle cx="24" cy="19" r="5"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">Hausgemacht</h3>
+        <p class="feature-text">
+          Jedes einzelne Stück wird von Hand in unserer Küche gefertigt — mit Hingabe und ohne Kompromisse.
+        </p>
+      </article>
+      <article class="feature-card animate-on-scroll" style="transition-delay: 0.2s">
+        <div class="feature-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M14 8c-2 0-6 2-6 10s10 16 16 22c6-6 16-14 16-22s-4-10-6-10-4 2-10 10C18 10 16 8 14 8z"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">Hochwertige Zutaten</h3>
+        <p class="feature-text">
+          Nur die besten Zutaten kommen in unsere Backwaren — regional, saisonal und mit Bedacht ausgewählt.
+        </p>
+      </article>
+      <article class="feature-card animate-on-scroll" style="transition-delay: 0.3s">
+        <div class="feature-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="24" cy="24" r="18"/>
+            <path d="M24 12v12l8 8"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">Immer Frisch</h3>
+        <p class="feature-text">
+          Wir backen erst auf Bestellung — so kommt alles frisch und mit vollem Geschmack bei dir an.
+        </p>
+      </article>
     </div>
   </div>
 </section>
 
 <style>
   .features {
-    padding: 0.4rem 1.5rem 2.2rem;
+    padding: var(--space-2xl) var(--space-md);
+    background: var(--color-bg-warm);
+    position: relative;
+  }
+
+  .features::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+  }
+
+  .features::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+  }
+
+  .features-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .features-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .features-label {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-sm);
+  }
+
+  .features-heading {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    color: var(--color-text);
+  }
+
+  .features-heading em {
+    font-style: italic;
+    color: var(--color-accent);
   }
 
   .features-grid {
-    max-width: 1020px;
-    margin: 0 auto;
-    border-radius: 1.8rem;
-    padding: 1.25rem 1rem;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
   }
 
   .feature-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--space-lg) var(--space-md);
     text-align: center;
-    padding: 1rem 1.4rem 1.15rem;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .feature-card:not(:last-child) {
-    border-right: 1px solid rgba(122, 74, 29, 0.16);
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(44, 24, 16, 0.08);
   }
 
-  .feature-icon-wrap {
-    width: 5.4rem;
-    height: 4.4rem;
-    margin: 0 auto 0.7rem;
+  .feature-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0 auto var(--space-md);
+    color: var(--color-accent);
   }
 
-  .feature-svg {
+  .feature-icon svg {
     width: 100%;
     height: 100%;
-    filter: drop-shadow(0 3px 6px rgba(86, 46, 19, 0.1));
   }
 
-  h3 {
-    font-family: var(--font-heading);
-    font-size: 1.38rem;
-    color: var(--color-brown-dark);
-    margin-bottom: 0.2rem;
+  .feature-title {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: var(--space-sm);
+    color: var(--color-text);
   }
 
-  p {
-    color: var(--color-text-light);
-    font-size: 0.97rem;
+  .feature-text {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--color-text-muted);
+    line-height: 1.75;
   }
 
-  @media (max-width: 720px) {
+  @media (max-width: 768px) {
     .features-grid {
       grid-template-columns: 1fr;
-      padding: 0.6rem 0.8rem;
-      border-radius: 1.35rem;
-    }
-
-    .feature-card:not(:last-child) {
-      border-right: 0;
-      border-bottom: 1px solid rgba(122, 74, 29, 0.16);
+      max-width: 28rem;
+      margin: 0 auto;
     }
   }
 </style>

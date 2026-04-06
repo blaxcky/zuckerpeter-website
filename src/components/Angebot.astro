@@ -1,195 +1,167 @@
 ---
 const base = import.meta.env.BASE_URL;
+
+const products = [
+  {
+    name: 'Kekse',
+    description: 'Knusprig, buttrig und unwiderstehlich — unsere Kekse sind der perfekte Begleiter zu Kaffee und Tee.',
+    position: '-2rem -42.35rem',
+  },
+  {
+    name: 'Gebäck',
+    description: 'Feine Gebäckstücke für besondere Anlässe oder einfach so — zum Genießen und Teilen.',
+    position: '-15.3rem -42.35rem',
+  },
+  {
+    name: 'Kuchen',
+    description: 'Saftige Kuchen in vielen Variationen — von klassisch bis kreativ, immer ein Genuss.',
+    position: '-28.6rem -42.35rem',
+  },
+  {
+    name: 'Torten',
+    description: 'Unsere Torten sind echte Hingucker — liebevoll dekoriert und unglaublich lecker.',
+    position: '-41.85rem -42.35rem',
+  },
+];
 ---
 
-<section class="angebot" id="angebot" style={`--reference-image: url(${base}reference-website.png)`}>
+<section class="angebot" id="angebot">
   <div class="angebot-inner">
-    <h2 class="section-title">Unser Angebot</h2>
-    <p class="section-subtitle">Entdecke meine Auswahl an köstlichen, hausgemachten Leckereien.</p>
-
-    <div class="angebot-grid">
-      <article class="angebot-card">
-        <div class="angebot-image paper-panel">
-          <div class="angebot-shot kekse"></div>
-        </div>
-        <div class="angebot-label">
-          <span class="label-wing left"></span>
-          <span class="label-text">Kekse</span>
-          <span class="label-wing right"></span>
-        </div>
-      </article>
-
-      <article class="angebot-card">
-        <div class="angebot-image paper-panel">
-          <div class="angebot-shot gebaeck"></div>
-        </div>
-        <div class="angebot-label">
-          <span class="label-wing left"></span>
-          <span class="label-text">Gebäck</span>
-          <span class="label-wing right"></span>
-        </div>
-      </article>
-
-      <article class="angebot-card">
-        <div class="angebot-image paper-panel">
-          <div class="angebot-shot kuchen"></div>
-        </div>
-        <div class="angebot-label">
-          <span class="label-wing left"></span>
-          <span class="label-text">Kuchen</span>
-          <span class="label-wing right"></span>
-        </div>
-      </article>
-
-      <article class="angebot-card">
-        <div class="angebot-image paper-panel">
-          <div class="angebot-shot torten"></div>
-        </div>
-        <div class="angebot-label">
-          <span class="label-wing left"></span>
-          <span class="label-text">Torten</span>
-          <span class="label-wing right"></span>
-        </div>
-      </article>
+    <div class="angebot-header animate-on-scroll">
+      <span class="angebot-label">Sortiment</span>
+      <h2 class="angebot-heading">Unser <em>Angebot</em></h2>
+      <p class="angebot-intro">
+        Von knusprigen Keksen bis hin zu kunstvollen Torten — bei uns findet jeder seinen Liebling.
+      </p>
     </div>
-
-    <div class="angebot-cta">
-      <a href="#kontakt" class="btn-ornate">Zur Galerie</a>
+    <div class="angebot-grid">
+      {products.map((product, i) => (
+        <article class="product-card animate-on-scroll" style={`transition-delay: ${(i + 1) / 10}s`}>
+          <div class="product-image-wrap">
+            <div
+              class="product-image"
+              style={`background-image: url('${base}reference-website.png'); background-position: ${product.position};`}
+            ></div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">{product.name}</h3>
+            <p class="product-desc">{product.description}</p>
+          </div>
+        </article>
+      ))}
     </div>
   </div>
 </section>
 
 <style>
   .angebot {
-    padding: 1.3rem 1.5rem 0;
+    padding: var(--space-2xl) var(--space-md);
+    background: var(--color-bg);
   }
 
   .angebot-inner {
-    max-width: 1060px;
+    max-width: var(--max-width);
     margin: 0 auto;
+  }
+
+  .angebot-header {
     text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .angebot-label {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-sm);
+  }
+
+  .angebot-heading {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+  }
+
+  .angebot-heading em {
+    font-style: italic;
+    color: var(--color-accent);
+  }
+
+  .angebot-intro {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--color-text-muted);
+    max-width: 36rem;
+    margin: 0 auto;
   }
 
   .angebot-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1rem;
-    margin-top: 1.8rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
   }
 
-  .angebot-card {
-    position: relative;
-  }
-
-  .angebot-image {
-    border-radius: 0.45rem;
-    padding: 0.4rem;
+  .product-card {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
     overflow: hidden;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .angebot-card:hover .angebot-image {
+  .product-card:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-deep);
+    box-shadow: 0 16px 48px rgba(44, 24, 16, 0.1);
   }
 
-  .angebot-shot {
-    aspect-ratio: 1.04;
-    border-radius: 0.25rem;
-    background-image: var(--reference-image);
-    background-size: 33rem auto;
-    background-repeat: no-repeat;
-    box-shadow: inset 0 0 0 1px rgba(120, 71, 29, 0.12);
+  .product-card:hover .product-image {
+    transform: scale(1.05);
   }
 
-  .angebot-shot::after {
-    content: '';
-    display: block;
+  .product-image-wrap {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--color-bg-warm);
+  }
+
+  .product-image {
     width: 100%;
     height: 100%;
-    background:
-      linear-gradient(180deg, rgba(255, 237, 208, 0.12), transparent 35%),
-      linear-gradient(180deg, transparent 50%, rgba(61, 26, 8, 0.12));
+    background-size: 56.2rem auto;
+    background-repeat: no-repeat;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .kekse {
-    background-position: -1.8rem -39.2rem;
+  .product-info {
+    padding: var(--space-md);
   }
 
-  .gebaeck {
-    background-position: -10.4rem -39.2rem;
+  .product-name {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
   }
 
-  .kuchen {
-    background-position: -18.8rem -39.2rem;
+  .product-desc {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--color-text-muted);
+    line-height: 1.7;
   }
 
-  .torten {
-    background-position: -27.2rem -39.2rem;
-  }
-
-  .angebot-label {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 82%;
-    margin: -0.8rem auto 0;
-    z-index: 1;
-  }
-
-  .label-text {
-    display: inline-block;
-    padding: 0.58rem 1.3rem;
-    background: linear-gradient(180deg, #8f5317 0%, #6b350b 60%, #4a2108 100%);
-    color: #fbe6b6;
-    font-family: var(--font-heading);
-    font-size: 1.35rem;
-    line-height: 1;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
-    border: 1px solid rgba(255, 212, 140, 0.35);
-    box-shadow: 0 10px 15px rgba(61, 26, 8, 0.22);
-  }
-
-  .label-wing {
-    width: 1rem;
-    height: 2.05rem;
-    flex-shrink: 0;
-    background: linear-gradient(180deg, #8f5317, #4a2108);
-  }
-
-  .label-wing.left {
-    clip-path: polygon(0% 15%, 100% 0%, 100% 100%, 0% 85%);
-  }
-
-  .label-wing.right {
-    clip-path: polygon(0% 0%, 100% 15%, 100% 85%, 0% 100%);
-  }
-
-  .angebot-cta {
-    margin-top: 2rem;
-    padding-bottom: 1rem;
-  }
-
-  @media (max-width: 960px) {
+  @media (max-width: 768px) {
     .angebot-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.2rem;
-    }
-  }
-
-  @media (max-width: 520px) {
-    .angebot {
-      padding-inline: 1rem;
-    }
-
-    .angebot-grid {
-      gap: 0.9rem;
-    }
-
-    .label-text {
-      font-size: 1.1rem;
-      padding-inline: 1rem;
+      grid-template-columns: 1fr;
+      max-width: 28rem;
+      margin: 0 auto;
     }
   }
 </style>
