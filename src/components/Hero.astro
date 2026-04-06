@@ -1,184 +1,89 @@
-<section class="hero">
-  <div class="hero-grain"></div>
-  <div class="hero-orb hero-orb-left"></div>
-  <div class="hero-orb hero-orb-right"></div>
-  <div class="hero-content">
-    <div class="hero-badge animate-hero" style="--delay: 0s" aria-hidden="true">ZP</div>
-    <h1 class="hero-title animate-hero" style="--delay: 0.15s">Zuckerpeter</h1>
-    <p class="hero-tagline animate-hero" style="--delay: 0.3s">
-      Backen mit Leidenschaft
-    </p>
-    <div class="hero-divider animate-hero" style="--delay: 0.45s">
-      <span></span>
-    </div>
-    <p class="hero-subtitle animate-hero" style="--delay: 0.5s">
-      Handgemachte Köstlichkeiten aus unserer Hobbybäckerei
-    </p>
+---
+const base = import.meta.env.BASE_URL;
+---
+
+<section class="hero" id="hero">
+  <div
+    class="hero-media animate-on-scroll"
+    style={`background-image: linear-gradient(180deg, rgba(54, 31, 18, 0.08), rgba(54, 31, 18, 0.12)), url('${base}reference-website.png')`}
+  >
+    <div class="hero-media-overlay"></div>
+    <img
+      class="hero-logo"
+      src={`${base}logo.png`}
+      alt="Zuckerpeter Logo"
+      width="219"
+      height="219"
+    />
   </div>
-  <div class="hero-scroll animate-hero" style="--delay: 0.7s">
-    <span>Entdecken</span>
+  <div class="hero-band animate-on-scroll">
+    <h1 class="hero-title">Willkommen bei Zuckerpeter!</h1>
+    <p class="hero-subtitle">Hausgemachte Leckereien mit Leidenschaft gebacken.</p>
+    <a class="hero-cta" href="#angebot">Jetzt bestellen!</a>
   </div>
 </section>
 
 <style>
   .hero {
-    position: relative;
-    min-height: 100vh;
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background:
-      linear-gradient(180deg, rgba(251, 245, 235, 0.96) 0%, rgba(251, 245, 235, 1) 100%),
-      var(--color-bg);
-    overflow: hidden;
-    padding: var(--space-lg);
+    margin-bottom: 1rem;
   }
 
-  .hero-grain {
+  .hero-media {
+    position: relative;
+    min-height: 15rem;
+    background-size: 118% auto;
+    background-position: center top;
+    overflow: hidden;
+  }
+
+  .hero-media-overlay {
     position: absolute;
     inset: 0;
-    opacity: 0.35;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E");
-    background-size: 200px;
-    pointer-events: none;
+    background:
+      linear-gradient(180deg, rgba(255, 241, 222, 0) 55%, rgba(125, 77, 46, 0.12) 100%);
   }
 
-  .hero-orb {
+  .hero-logo {
     position: absolute;
-    border-radius: 999px;
-    pointer-events: none;
-    mix-blend-mode: multiply;
+    left: 50%;
+    top: 0.15rem;
+    width: min(15rem, 72vw);
+    height: auto;
+    transform: translateX(-50%);
+    filter: drop-shadow(0 0.6rem 1rem rgba(71, 40, 17, 0.25));
   }
 
-  .hero-orb-left {
-    width: 16rem;
-    height: 16rem;
-    top: 5rem;
-    left: -4rem;
-    background: rgba(212, 168, 83, 0.12);
-  }
-
-  .hero-orb-right {
-    width: 14rem;
-    height: 14rem;
-    right: 8%;
-    bottom: 12rem;
-    background: rgba(196, 101, 58, 0.12);
-  }
-
-  .hero-content {
+  .hero-band {
+    background: var(--color-band);
+    color: #fff6eb;
     text-align: center;
-    position: relative;
-    z-index: 1;
-    max-width: 48rem;
-  }
-
-  .hero-badge {
-    width: 6rem;
-    height: 6rem;
-    margin-bottom: var(--space-md);
-    margin-inline: auto;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    background: rgba(250, 240, 225, 0.9);
-    color: var(--color-accent);
-    font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 600;
-    box-shadow: 0 1rem 3rem rgba(44, 24, 16, 0.08);
+    padding: 0.85rem 1.1rem 1.15rem;
   }
 
   .hero-title {
-    font-size: clamp(3.5rem, 9vw, 6.5rem);
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    color: var(--color-text);
-    margin-bottom: var(--space-xs);
-  }
-
-  .hero-tagline {
-    font-size: clamp(1.05rem, 2.4vw, 1.45rem);
-    font-weight: 300;
-    color: var(--color-text-muted);
-    letter-spacing: 0.06em;
-    text-transform: none;
-    margin-bottom: var(--space-md);
-  }
-
-  .hero-divider span {
-    display: block;
-    width: 8.5rem;
-    height: 0.2rem;
-    margin: 0 auto var(--space-md);
-    border-radius: 999px;
-    background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
-    margin-bottom: var(--space-md);
+    font-size: clamp(1.75rem, 4.8vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.1;
   }
 
   .hero-subtitle {
-    max-width: 30rem;
-    margin: 0 auto;
-    font-size: 1rem;
-    font-weight: 300;
-    color: var(--color-text-muted);
-    line-height: 1.85;
+    margin-top: 0.35rem;
+    font-size: 0.78rem;
+    color: rgba(255, 246, 235, 0.88);
   }
 
-  .hero-scroll {
-    position: absolute;
-    bottom: var(--space-md);
-    display: flex;
-    flex-direction: column;
+  .hero-cta {
+    display: inline-flex;
     align-items: center;
-    color: var(--color-text-muted);
-    font-size: 0.75rem;
+    justify-content: center;
+    min-width: 7.25rem;
+    margin-top: 0.85rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 0.75rem;
+    background: linear-gradient(180deg, var(--color-accent) 0%, #8a511f 100%);
+    box-shadow: 0 0.22rem 0 #4a2817, 0 0.55rem 1rem rgba(74, 40, 23, 0.18);
+    color: #fff6eb;
+    font-size: 0.72rem;
     font-weight: 600;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    z-index: 1;
-  }
-
-  .animate-hero {
-    opacity: 0;
-    transform: translateY(1.5rem);
-    animation: heroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: var(--delay);
-  }
-
-  @keyframes heroFadeUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @media (max-width: 768px) {
-    .hero {
-      min-height: auto;
-      padding-top: 8rem;
-      padding-bottom: 8rem;
-    }
-
-    .hero-badge {
-      width: 5rem;
-      height: 5rem;
-      font-size: 1.6rem;
-    }
-
-    .hero-tagline {
-      font-size: 1.1rem;
-    }
-
-    .hero-subtitle {
-      font-size: 0.95rem;
-    }
-
-    .hero-scroll {
-      position: static;
-      margin-top: 3rem;
-    }
   }
 </style>

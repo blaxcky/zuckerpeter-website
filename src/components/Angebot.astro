@@ -2,172 +2,126 @@
 const base = import.meta.env.BASE_URL;
 
 const products = [
-  {
-    name: 'Kekse',
-    description: ['Knusprig, buttrig und', 'perfekt zu Kaffee und Tee.'],
-    position: '10% 72%',
-  },
-  {
-    name: 'Gebäck',
-    description: ['Feine Stücke zum', 'Genießen und Teilen.'],
-    position: '38% 72%',
-  },
-  {
-    name: 'Kuchen',
-    description: ['Saftige Kuchen von', 'klassisch bis kreativ.'],
-    position: '64% 72%',
-  },
-  {
-    name: 'Torten',
-    description: ['Liebevoll dekoriert und', 'unglaublich lecker.'],
-    position: '88% 72%',
-  },
+  { name: 'Kekse', position: '4% 100%' },
+  { name: 'Gebäck', position: '35% 100%' },
+  { name: 'Kuchen', position: '66% 100%' },
+  { name: 'Torten', position: '97% 100%' },
 ];
 ---
 
 <section class="angebot" id="angebot">
   <div class="angebot-inner">
     <div class="angebot-header animate-on-scroll">
-      <span class="angebot-label">Sortiment</span>
       <h2 class="angebot-heading">Unser Angebot</h2>
       <p class="angebot-intro">
-        Von knusprigen Keksen bis hin zu kunstvollen Torten, bei uns findet
-        jeder seinen Liebling.
+        Entdecke meine Auswahl an köstlichen, hausgemachten Leckereien.
       </p>
     </div>
     <div class="angebot-grid">
-      {products.map((product, i) => (
-        <article class="product-card animate-on-scroll" style={`transition-delay: ${(i + 1) / 10}s`}>
+      {products.map((product) => (
+        <article class="product-card animate-on-scroll">
           <div class="product-image-wrap">
             <div
               class="product-image"
-              style={`background-image: url('${base}reference-website.png'); background-position: ${product.position};`}
+              style={`background-image: url('${base}reference-website.png'); --product-position: ${product.position};`}
             ></div>
           </div>
-          <div class="product-info">
-            <h3 class="product-name">{product.name}</h3>
-            {product.description.map((line) => (
-              <p class="product-desc">{line}</p>
-            ))}
-          </div>
+          <div class="product-label">{product.name}</div>
         </article>
       ))}
+    </div>
+    <div class="angebot-cta-wrap animate-on-scroll">
+      <a class="angebot-cta" href="#hero">Zur Galerie</a>
     </div>
   </div>
 </section>
 
 <style>
   .angebot {
-    padding: var(--space-2xl) var(--space-md);
-    background: var(--color-bg);
-  }
-
-  .angebot-inner {
-    max-width: var(--max-width);
-    margin: 0 auto;
+    padding: 1.1rem 1rem 0;
   }
 
   .angebot-header {
     text-align: center;
-    margin-bottom: var(--space-xl);
-  }
-
-  .angebot-label {
-    display: inline-block;
-    font-family: var(--font-body);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--color-accent);
-    margin-bottom: var(--space-sm);
+    margin-bottom: 0.85rem;
   }
 
   .angebot-heading {
-    font-size: clamp(2.2rem, 4vw, 3.75rem);
-    font-weight: 400;
+    font-size: 2rem;
+    font-weight: 700;
     color: var(--color-text);
-    margin-bottom: var(--space-sm);
+    line-height: 1.05;
   }
 
   .angebot-intro {
-    font-size: 1.05rem;
-    font-weight: 300;
+    margin-top: 0.35rem;
+    font-size: 0.52rem;
     color: var(--color-text-muted);
-    max-width: 38rem;
-    margin: 0 auto;
+    line-height: 1.45;
   }
 
   .angebot-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.75rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.5rem;
   }
 
   .product-card {
     background: var(--color-card);
-    border-radius: var(--radius);
-    overflow: hidden;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 1rem 3rem rgba(44, 24, 16, 0.06);
-  }
-
-  .product-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 48px rgba(44, 24, 16, 0.1);
-  }
-
-  .product-card:hover .product-image {
-    transform: scale(1.05);
+    padding: 0.25rem 0.25rem 0.18rem;
+    border-radius: 0.32rem;
+    box-shadow: inset 0 0 0 1px rgba(125, 77, 46, 0.05);
   }
 
   .product-image-wrap {
-    aspect-ratio: 16 / 7;
+    aspect-ratio: 1.85 / 1;
     overflow: hidden;
+    border-radius: 0.2rem;
     background: var(--color-bg-warm);
   }
 
   .product-image {
     width: 100%;
     height: 100%;
-    background-size: 60rem auto;
-    background-position: center;
+    background-size: 32rem auto;
     background-repeat: no-repeat;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    background-position: var(--product-position);
   }
 
-  .product-info {
-    padding: 1.5rem 1.5rem 1.75rem;
+  .product-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 1.35rem;
+    margin: 0.16rem auto 0;
+    width: calc(100% - 1rem);
+    border-radius: 0.25rem;
+    background: linear-gradient(180deg, var(--color-accent) 0%, #8a511f 100%);
+    box-shadow: 0 0.1rem 0 #4a2817;
+    color: #fff4e6;
+    font-family: var(--font-display);
+    font-size: 0.83rem;
+    font-weight: 700;
   }
 
-  .product-name {
-    font-size: 1.9rem;
-    font-weight: 500;
-    color: var(--color-text);
-    margin-bottom: 0.45rem;
+  .angebot-cta-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.7rem;
   }
 
-  .product-desc {
-    font-size: 0.95rem;
-    font-weight: 300;
-    color: var(--color-text-muted);
-    line-height: 1.6;
-  }
-
-  .product-desc + .product-desc {
-    margin-top: 0.05rem;
-  }
-
-  @media (max-width: 768px) {
-    .angebot-grid {
-      grid-template-columns: 1fr;
-      max-width: 24rem;
-      margin: 0 auto;
-    }
-
-    .product-name {
-      font-size: 1.65rem;
-    }
+  .angebot-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 6.6rem;
+    padding: 0.42rem 0.85rem;
+    border-radius: 0.75rem;
+    background: linear-gradient(180deg, var(--color-accent) 0%, #8a511f 100%);
+    box-shadow: 0 0.2rem 0 #4a2817, 0 0.45rem 0.8rem rgba(74, 40, 23, 0.14);
+    color: #fff4e6;
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    font-weight: 700;
   }
 </style>

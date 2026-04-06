@@ -3,139 +3,98 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <section class="about" id="about">
-  <div class="about-inner">
-    <div class="about-image-col animate-on-scroll">
-      <div class="about-image-frame">
-        <div class="about-image"
-          style={`background-image: url('${base}reference-website.png')`}>
-        </div>
-      </div>
-      <div class="about-image-accent"></div>
-    </div>
+  <div class="about-inner animate-on-scroll">
     <div class="about-text-col">
-      <span class="about-label animate-on-scroll">Über uns</span>
-      <h2 class="about-heading animate-on-scroll">
-        Wer steckt hinter<br /><em>Zuckerpeter?</em>
-      </h2>
-      <p class="about-body animate-on-scroll">
-        Hinter Zuckerpeter steckt Peter, ein leidenschaftlicher Hobbybäcker
-        mit Liebe zu ehrlichem Backen.
-      </p>
-      <p class="about-body animate-on-scroll">
-        Jedes Stück wird mit Sorgfalt, hochwertigen Zutaten und viel
-        Handarbeit gefertigt.
-      </p>
-      <p class="about-body animate-on-scroll">
-        Keine Massenproduktion. Nur handgemachtes Gebäck, das von Herzen
-        kommt.
-      </p>
+      <h2 class="about-heading">Über Zuckerpeter</h2>
+      <p class="about-copy">Hallo! Ich bin Zuckerpeter, leidenschaftlicher</p>
+      <p class="about-copy">Hobbybäcker mit einer Liebe für</p>
+      <p class="about-copy">hausgemachte Leckereien.</p>
+      <p class="about-copy about-copy-gap">Mit viel Herz und Hingabe bereite ich</p>
+      <p class="about-copy">in meiner gemütlichen Küche köstliche</p>
+      <p class="about-copy">Kekse und Kuchen zu.</p>
+      <p class="about-copy about-copy-gap">Bei mir steht Qualität und Geschmack</p>
+      <p class="about-copy">an erster Stelle.</p>
+      <a class="about-button" href="#angebot">Mehr erfahren</a>
+    </div>
+    <div class="about-visual">
+      <div class="about-oval"></div>
+      <img
+        class="about-logo"
+        src={`${base}logo.png`}
+        alt="Zuckerpeter Signet"
+        width="219"
+        height="219"
+      />
     </div>
   </div>
 </section>
 
 <style>
   .about {
-    padding: var(--space-2xl) var(--space-md);
-    background: var(--color-bg);
+    padding: 1.35rem 1rem 0.35rem;
   }
 
   .about-inner {
-    max-width: var(--max-width);
-    margin: 0 auto;
     display: grid;
-    grid-template-columns: minmax(16rem, 28rem) minmax(18rem, 32rem);
-    justify-content: center;
-    gap: clamp(2.5rem, 6vw, 7rem);
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.75rem;
     align-items: center;
   }
 
-  .about-image-col {
-    position: relative;
-  }
-
-  .about-image-frame {
-    position: relative;
-    aspect-ratio: 4 / 5;
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: 0 1.5rem 4rem rgba(44, 24, 16, 0.1);
-  }
-
-  .about-image {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: 32% center;
-    background-repeat: no-repeat;
-  }
-
-  .about-image-accent {
-    position: absolute;
-    inset: 1.25rem -1.25rem -1.25rem 1.25rem;
-    background: rgba(212, 168, 83, 0.12);
-    border-radius: var(--radius);
-    pointer-events: none;
-    z-index: -1;
-  }
-
-  .about-text-col {
-    max-width: 30rem;
-  }
-
-  .about-label {
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--color-accent);
-    margin-bottom: var(--space-sm);
-  }
-
   .about-heading {
-    font-size: clamp(2.4rem, 4vw, 4rem);
-    font-weight: 400;
+    font-size: 1.95rem;
+    font-weight: 700;
     color: var(--color-text);
-    margin-bottom: var(--space-md);
-    line-height: 1.1;
+    line-height: 1.05;
+    margin-bottom: 0.8rem;
   }
 
-  .about-heading em {
-    color: var(--color-accent);
-  }
-
-  .about-body {
-    font-size: 1.1rem;
-    font-weight: 300;
+  .about-copy {
+    font-size: 0.52rem;
+    line-height: 1.48;
     color: var(--color-text-muted);
-    line-height: 1.9;
-    margin-bottom: 1.15rem;
-    max-width: 24rem;
+    text-wrap: balance;
   }
 
-  .about-body:last-child {
-    margin-bottom: 0;
+  .about-copy-gap {
+    margin-top: 0.55rem;
   }
 
-  @media (max-width: 768px) {
-    .about-inner {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-    }
+  .about-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 6.6rem;
+    margin-top: 0.85rem;
+    padding: 0.45rem 0.75rem;
+    border-radius: 0.75rem;
+    background: linear-gradient(180deg, var(--color-accent) 0%, #8a511f 100%);
+    box-shadow: 0 0.22rem 0 #4a2817, 0 0.5rem 0.95rem rgba(74, 40, 23, 0.16);
+    color: #fff6eb;
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
 
-    .about-image-frame {
-      aspect-ratio: 4 / 5;
-      max-width: 22rem;
-      margin: 0 auto;
-    }
+  .about-visual {
+    position: relative;
+    width: 12rem;
+    height: 8.2rem;
+  }
 
-    .about-image-accent {
-      inset: 1rem -0.75rem -0.75rem 0.75rem;
-    }
+  .about-oval {
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    background: #d9b084;
+  }
 
-    .about-text-col {
-      max-width: 28rem;
-      margin: 0 auto;
-    }
+  .about-logo {
+    position: absolute;
+    inset: 0;
+    width: 10rem;
+    height: 10rem;
+    margin: auto;
+    transform: translateY(-0.15rem);
+    object-fit: contain;
   }
 </style>
