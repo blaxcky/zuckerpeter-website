@@ -2,43 +2,32 @@
   <div class="features-inner">
     <div class="features-header animate-on-scroll">
       <span class="features-label">Unsere Werte</span>
-      <h2 class="features-heading">Was uns <em>besonders</em> macht</h2>
+      <h2 class="features-heading">Was uns besonders macht</h2>
     </div>
     <div class="features-grid">
       <article class="feature-card animate-on-scroll" style="transition-delay: 0.1s">
-        <div class="feature-icon">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M24 4C14 4 8 12 8 20c0 12 16 24 16 24s16-12 16-24c0-8-6-16-16-16z"/>
-            <circle cx="24" cy="19" r="5"/>
-          </svg>
-        </div>
+        <span class="feature-number">01</span>
         <h3 class="feature-title">Hausgemacht</h3>
         <p class="feature-text">
-          Jedes einzelne Stück wird von Hand in unserer Küche gefertigt — mit Hingabe und ohne Kompromisse.
+          Von Hand gefertigt
         </p>
+        <p class="feature-text">mit Hingabe und Sorgfalt</p>
       </article>
       <article class="feature-card animate-on-scroll" style="transition-delay: 0.2s">
-        <div class="feature-icon">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M14 8c-2 0-6 2-6 10s10 16 16 22c6-6 16-14 16-22s-4-10-6-10-4 2-10 10C18 10 16 8 14 8z"/>
-          </svg>
-        </div>
+        <span class="feature-number">02</span>
         <h3 class="feature-title">Hochwertige Zutaten</h3>
         <p class="feature-text">
-          Nur die besten Zutaten kommen in unsere Backwaren — regional, saisonal und mit Bedacht ausgewählt.
+          Regionale Zutaten
         </p>
+        <p class="feature-text">sorgfältig ausgewählt</p>
       </article>
       <article class="feature-card animate-on-scroll" style="transition-delay: 0.3s">
-        <div class="feature-icon">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="24" cy="24" r="18"/>
-            <path d="M24 12v12l8 8"/>
-          </svg>
-        </div>
+        <span class="feature-number">03</span>
         <h3 class="feature-title">Immer Frisch</h3>
         <p class="feature-text">
-          Wir backen erst auf Bestellung — so kommt alles frisch und mit vollem Geschmack bei dir an.
+          Frisch auf Bestellung
         </p>
+        <p class="feature-text">für vollen Geschmack</p>
       </article>
     </div>
   </div>
@@ -93,30 +82,25 @@
   }
 
   .features-heading {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
     font-weight: 400;
     color: var(--color-text);
-  }
-
-  .features-heading em {
-    font-style: italic;
-    color: var(--color-accent);
   }
 
   .features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-md);
+    gap: 1.5rem;
   }
 
   .feature-card {
     background: var(--color-bg);
-    border: 1px solid var(--color-border);
     border-radius: var(--radius);
-    padding: var(--space-lg) var(--space-md);
+    padding: 2rem 1.75rem;
     text-align: center;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
                 box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 1rem 2.75rem rgba(44, 24, 16, 0.05);
   }
 
   .feature-card:hover {
@@ -124,37 +108,37 @@
     box-shadow: 0 12px 40px rgba(44, 24, 16, 0.08);
   }
 
-  .feature-icon {
-    width: 3.5rem;
-    height: 3.5rem;
-    margin: 0 auto var(--space-md);
+  .feature-number {
+    display: inline-block;
+    margin-bottom: 1.25rem;
     color: var(--color-accent);
-  }
-
-  .feature-icon svg {
-    width: 100%;
-    height: 100%;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    line-height: 1;
   }
 
   .feature-title {
-    font-family: var(--font-display);
-    font-size: 1.4rem;
+    font-size: 1.45rem;
     font-weight: 500;
-    margin-bottom: var(--space-sm);
+    margin-bottom: 0.65rem;
     color: var(--color-text);
   }
 
   .feature-text {
-    font-size: 0.95rem;
+    font-size: 0.96rem;
     font-weight: 300;
     color: var(--color-text-muted);
-    line-height: 1.75;
+    line-height: 1.65;
+  }
+
+  .feature-text + .feature-text {
+    margin-top: 0.1rem;
   }
 
   @media (max-width: 768px) {
     .features-grid {
       grid-template-columns: 1fr;
-      max-width: 28rem;
+      max-width: 24rem;
       margin: 0 auto;
     }
   }

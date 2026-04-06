@@ -4,23 +4,23 @@ const base = import.meta.env.BASE_URL;
 const products = [
   {
     name: 'Kekse',
-    description: 'Knusprig, buttrig und unwiderstehlich — unsere Kekse sind der perfekte Begleiter zu Kaffee und Tee.',
-    position: '-2rem -42.35rem',
+    description: ['Knusprig, buttrig und', 'perfekt zu Kaffee und Tee.'],
+    position: '10% 72%',
   },
   {
     name: 'Gebäck',
-    description: 'Feine Gebäckstücke für besondere Anlässe oder einfach so — zum Genießen und Teilen.',
-    position: '-15.3rem -42.35rem',
+    description: ['Feine Stücke zum', 'Genießen und Teilen.'],
+    position: '38% 72%',
   },
   {
     name: 'Kuchen',
-    description: 'Saftige Kuchen in vielen Variationen — von klassisch bis kreativ, immer ein Genuss.',
-    position: '-28.6rem -42.35rem',
+    description: ['Saftige Kuchen von', 'klassisch bis kreativ.'],
+    position: '64% 72%',
   },
   {
     name: 'Torten',
-    description: 'Unsere Torten sind echte Hingucker — liebevoll dekoriert und unglaublich lecker.',
-    position: '-41.85rem -42.35rem',
+    description: ['Liebevoll dekoriert und', 'unglaublich lecker.'],
+    position: '88% 72%',
   },
 ];
 ---
@@ -29,9 +29,10 @@ const products = [
   <div class="angebot-inner">
     <div class="angebot-header animate-on-scroll">
       <span class="angebot-label">Sortiment</span>
-      <h2 class="angebot-heading">Unser <em>Angebot</em></h2>
+      <h2 class="angebot-heading">Unser Angebot</h2>
       <p class="angebot-intro">
-        Von knusprigen Keksen bis hin zu kunstvollen Torten — bei uns findet jeder seinen Liebling.
+        Von knusprigen Keksen bis hin zu kunstvollen Torten, bei uns findet
+        jeder seinen Liebling.
       </p>
     </div>
     <div class="angebot-grid">
@@ -45,7 +46,9 @@ const products = [
           </div>
           <div class="product-info">
             <h3 class="product-name">{product.name}</h3>
-            <p class="product-desc">{product.description}</p>
+            {product.description.map((line) => (
+              <p class="product-desc">{line}</p>
+            ))}
           </div>
         </article>
       ))}
@@ -81,38 +84,33 @@ const products = [
   }
 
   .angebot-heading {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(2.2rem, 4vw, 3.75rem);
     font-weight: 400;
     color: var(--color-text);
     margin-bottom: var(--space-sm);
-  }
-
-  .angebot-heading em {
-    font-style: italic;
-    color: var(--color-accent);
   }
 
   .angebot-intro {
     font-size: 1.05rem;
     font-weight: 300;
     color: var(--color-text-muted);
-    max-width: 36rem;
+    max-width: 38rem;
     margin: 0 auto;
   }
 
   .angebot-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-md);
+    gap: 1.75rem;
   }
 
   .product-card {
     background: var(--color-card);
-    border: 1px solid var(--color-border);
     border-radius: var(--radius);
     overflow: hidden;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
                 box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 1rem 3rem rgba(44, 24, 16, 0.06);
   }
 
   .product-card:hover {
@@ -125,7 +123,7 @@ const products = [
   }
 
   .product-image-wrap {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 7;
     overflow: hidden;
     background: var(--color-bg-warm);
   }
@@ -133,35 +131,43 @@ const products = [
   .product-image {
     width: 100%;
     height: 100%;
-    background-size: 56.2rem auto;
+    background-size: 60rem auto;
+    background-position: center;
     background-repeat: no-repeat;
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .product-info {
-    padding: var(--space-md);
+    padding: 1.5rem 1.5rem 1.75rem;
   }
 
   .product-name {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
+    font-size: 1.9rem;
     font-weight: 500;
     color: var(--color-text);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.45rem;
   }
 
   .product-desc {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 300;
     color: var(--color-text-muted);
-    line-height: 1.7;
+    line-height: 1.6;
+  }
+
+  .product-desc + .product-desc {
+    margin-top: 0.05rem;
   }
 
   @media (max-width: 768px) {
     .angebot-grid {
       grid-template-columns: 1fr;
-      max-width: 28rem;
+      max-width: 24rem;
       margin: 0 auto;
+    }
+
+    .product-name {
+      font-size: 1.65rem;
     }
   }
 </style>

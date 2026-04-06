@@ -44,12 +44,12 @@ const { title } = Astro.props;
     --space-sm: 1rem;
     --space-md: 2rem;
     --space-lg: 4rem;
-    --space-xl: 6rem;
-    --space-2xl: 10rem;
+    --space-xl: 5.5rem;
+    --space-2xl: 8rem;
 
-    --max-width: 72rem;
-    --radius: 1rem;
-    --radius-sm: 0.5rem;
+    --max-width: 80rem;
+    --radius: 1.75rem;
+    --radius-sm: 0.75rem;
   }
 
   *, *::before, *::after {
@@ -68,7 +68,10 @@ const { title } = Astro.props;
     font-family: var(--font-body);
     font-weight: 400;
     color: var(--color-text);
-    background-color: var(--color-bg);
+    background:
+      radial-gradient(circle at top left, rgba(212, 168, 83, 0.08), transparent 28rem),
+      radial-gradient(circle at 85% 18%, rgba(196, 101, 58, 0.08), transparent 18rem),
+      var(--color-bg);
     line-height: 1.7;
     overflow-x: hidden;
   }
