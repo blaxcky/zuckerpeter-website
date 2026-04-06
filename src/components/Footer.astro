@@ -4,61 +4,27 @@ const year = new Date().getFullYear();
 
 <footer class="footer">
   <div class="footer-inner">
-    <div class="footer-brand">
-      <div class="footer-badge" aria-hidden="true">ZP</div>
-      <span class="footer-name">Zuckerpeter</span>
-    </div>
-    <p class="footer-copy">
-      &copy; {year} Zuckerpeter &nbsp;|&nbsp; Backen mit Leidenschaft
-    </p>
+    <p class="footer-copy">&copy; {year} Zuckerpeter · Backen mit Leidenschaft</p>
   </div>
 </footer>
 
 <style>
   .footer {
-    padding: var(--space-lg) var(--space-md);
-    background: var(--color-text);
-    color: var(--color-bg);
+    padding: 1.5rem 1rem 0;
+    color: var(--color-text-muted);
   }
 
   .footer-inner {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.25rem;
-  }
-
-  .footer-brand {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .footer-badge {
-    width: 3.25rem;
-    height: 3.25rem;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    background: rgba(250, 240, 225, 0.95);
-    color: var(--color-accent);
-    font-family: var(--font-display);
-    font-size: 1.15rem;
-    font-weight: 600;
-  }
-
-  .footer-name {
-    font-size: 1.55rem;
-    font-weight: 400;
-    opacity: 0.9;
+    text-align: center;
   }
 
   .footer-copy {
-    font-size: 0.95rem;
-    font-weight: 300;
-    opacity: 0.7;
-    letter-spacing: 0.02em;
+    font-size: 0.82rem;
+  }
+
+  @media (min-width: 780px) {
+    .footer {
+      padding: 2.25rem 3rem 0;
+    }
   }
 </style>

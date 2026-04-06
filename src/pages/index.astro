@@ -4,6 +4,7 @@ import Hero from '../components/Hero.astro';
 import About from '../components/About.astro';
 import Features from '../components/Features.astro';
 import Angebot from '../components/Angebot.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Zuckerpeter — Backen mit Leidenschaft">
@@ -12,13 +13,25 @@ import Angebot from '../components/Angebot.astro';
     <About />
     <Features />
     <Angebot />
+    <Footer />
   </main>
 </Layout>
 
 <style>
   .page-shell {
-    width: min(100%, 32.2rem);
+    width: min(calc(100% - 1.25rem), 70rem);
     margin: 0 auto;
-    padding-bottom: 2.5rem;
+    padding-bottom: 2.75rem;
+    background: linear-gradient(180deg, rgba(251, 241, 227, 0.82), rgba(244, 231, 214, 0.92));
+    box-shadow:
+      0 1.5rem 4rem rgba(92, 49, 24, 0.14),
+      inset 0 0 0 1px rgba(155, 110, 72, 0.08);
+    overflow: hidden;
+  }
+
+  @media (min-width: 780px) {
+    .page-shell {
+      border-radius: 1.5rem;
+    }
   }
 </style>

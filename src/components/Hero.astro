@@ -25,14 +25,15 @@ const base = import.meta.env.BASE_URL;
 
 <style>
   .hero {
-    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 1.5rem;
   }
 
   .hero-media {
     position: relative;
-    min-height: 15rem;
-    background-size: 118% auto;
-    background-position: center top;
+    min-height: 18rem;
+    background-size: cover;
+    background-position: center 10%;
     overflow: hidden;
   }
 
@@ -46,8 +47,8 @@ const base = import.meta.env.BASE_URL;
   .hero-logo {
     position: absolute;
     left: 50%;
-    top: 0.15rem;
-    width: min(15rem, 72vw);
+    top: 0.4rem;
+    width: min(15.5rem, 72vw);
     height: auto;
     transform: translateX(-50%);
     filter: drop-shadow(0 0.6rem 1rem rgba(71, 40, 17, 0.25));
@@ -57,18 +58,18 @@ const base = import.meta.env.BASE_URL;
     background: var(--color-band);
     color: #fff6eb;
     text-align: center;
-    padding: 0.85rem 1.1rem 1.15rem;
+    padding: 1rem 1.2rem 1.3rem;
   }
 
   .hero-title {
-    font-size: clamp(1.75rem, 4.8vw, 2.1rem);
+    font-size: clamp(1.8rem, 4.8vw, 2.5rem);
     font-weight: 700;
     line-height: 1.1;
   }
 
   .hero-subtitle {
     margin-top: 0.35rem;
-    font-size: 0.78rem;
+    font-size: 0.88rem;
     color: rgba(255, 246, 235, 0.88);
   }
 
@@ -76,14 +77,54 @@ const base = import.meta.env.BASE_URL;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 7.25rem;
+    min-width: 8rem;
     margin-top: 0.85rem;
-    padding: 0.45rem 0.9rem;
-    border-radius: 0.75rem;
+    padding: 0.55rem 1rem;
+    border-radius: 0.85rem;
     background: linear-gradient(180deg, var(--color-accent) 0%, #8a511f 100%);
     box-shadow: 0 0.22rem 0 #4a2817, 0 0.55rem 1rem rgba(74, 40, 23, 0.18);
     color: #fff6eb;
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     font-weight: 600;
+  }
+
+  @media (min-width: 780px) {
+    .hero {
+      padding-bottom: 3rem;
+    }
+
+    .hero-media {
+      min-height: 34rem;
+      border-radius: 1.5rem 1.5rem 0 0;
+      background-position: center 16%;
+    }
+
+    .hero-logo {
+      top: 1rem;
+      width: min(23rem, 34vw);
+    }
+
+    .hero-band {
+      position: relative;
+      width: min(42rem, calc(100% - 6rem));
+      margin: -3rem auto 0;
+      border-radius: 1.4rem;
+      padding: 1.65rem 2rem 1.8rem;
+      box-shadow: 0 1.5rem 3rem rgba(74, 40, 23, 0.22);
+    }
+
+    .hero-title {
+      font-size: clamp(2.75rem, 4vw, 3.85rem);
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+
+    .hero-cta {
+      min-width: 10.5rem;
+      padding: 0.75rem 1.2rem;
+      font-size: 0.92rem;
+    }
   }
 </style>
